@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Japan 101/102 - Menu</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/chat.css">
+	<link rel="stylesheet" type="text/css" href="css/video.css">
+	<script type="text/javascript" src='js/utils.js'></script>
+	<script type="text/javascript" src='js/header.js'></script>
+	<script type="text/javascript" src='js/chat.js'></script>
+	<script type="text/javascript" src='js/draw.js'></script>
+	<script type="text/javascript" src='js/video.js'></script>
+</head>
+<body>
+	<div class='header'>
+		<div class='header-item header-item-left'>Japan 101/102</div>
+		<a href='index.html' class='header-item header-item-left button'>Logout</a>
+		<a href='menu.html' class='header-item header-item-left button'>Menu</a>
+
+		<a href='#' class='header-item header-item-right button' id='view-chat'>Chat</a>
+		<div class='header-item header-item-right'>
+			<div class='button button-small toggle-on' id='translate-toggle'>T</div>
+			<div class='button button-small toggle-off' id='search-toggle'>S</div>
+			<input id='search' placeholder='Translate...'/>
+			<div class='button button-small'>Go</div>
+		</div>
+	</div>
+
+	<div id='chatpane'>
+		<div id='chatroom'>
+			<div class='dropdown closed' id='chatroom-selector'>
+				<span class='dropdown-arrow'>V</span>
+				<div class='dropdown-item unselectable'>
+					<input id='create-room-name' placeholder='Room name'/>
+					<div class='button button-small' id='create-room'>Create</div>
+				</div>
+				<div class='dropdown-item selected'>Room 1</div>
+				<div class='dropdown-item'>Room 2</div>
+				<div class='dropdown-item'>Room 3</div>
+				<div class='dropdown-item'>Room 4</div>
+			</div>
+		</div>
+		<div id='chats'>
+			<div id='chatbox' class='scrollable'>
+				<div class='chat'><span class='username'>Rob</span> This is a chat with text</div>
+				<div class='chat'><span class='username'>Rob</span> This is a chat with text</div>
+				<div class='chat'><span class='username'>Rob</span> This is a chat with text</div>
+				<div class='chat'><span class='username'>Rob</span> This is a chat with text</div>
+				<div class='chat'><span class='username'>Rob</span> This is a chat with text</div>
+				<div class='chat'>
+					<div class='drawing'>
+						<svg>
+							<g transform='scale(0.32)'>
+								<path d="m227,21c-2,0 -11.01578,-0.66441 -25,0c-21.07126,1.00113 -46.01294,4.94422 -72,11c-17.00854,3.96351 -30.3197,8.73116 -37,17c-6.47008,8.00863 -9,17 -9,30c0,14 6.65186,34.63074 31,54c22.1485,17.61942 54.00938,30.97763 85,44c38.01154,15.97258 66.51181,28.67009 90,49c17.14224,14.83725 23.49808,36.96039 25,59c1.49731,21.97177 0.09119,47.38028 -17,71c-17.04083,23.55014 -36.27188,41.15912 -58,54c-24.25844,14.33624 -43.88176,18.93686 -64,21c-17.9337,1.83914 -32.84933,0.70358 -41,-10c-8.12812,-10.67398 -10.49992,-31.98706 -11,-61c-0.49978,-28.9957 -0.6404,-54.13071 12,-80c10.84297,-22.19077 27.41345,-43.57466 48,-64c15.56889,-15.44699 44.1725,-32.50777 62,-37c28.27103,-7.12383 48.92096,-5.31555 74,6c24.08191,10.86565 47,27 69,41c22,14 43.62033,26.32991 66,32c20.72281,5.25031 43.00348,6.33313 59,6c24.01563,-0.50012 40.65308,-5.66669 57,-19c15.90002,-12.96878 25.28442,-32.23146 31,-53c5.10388,-18.5459 5,-36 5,-53c0,-14 -3.83893,-26.60573 -10,-37c-5.09894,-8.60236 -13.31934,-17.90024 -21,-23c-11.177,-7.42124 -29.34167,-16.58255 -47,-23c-18.46527,-6.71072 -36.89301,-9.55196 -51,-12c-14.90991,-2.58737 -25,-4 -36,-4c-8,0 -19.50424,1.03551 -24,4c-2.3613,1.55702 -4.48627,2.82375 -5,5c-0.22977,0.97325 -1,1 -3,1c-2,0 -6.92578,-0.49755 -12,-1c-6.96594,-0.68976 -15,0 -22,0c-11,0 -17.95331,0.49903 -26,1c-9.98068,0.62138 -19.06326,-0.28099 -32,1c-10.14841,1.00489 -17.94672,3.49874 -25,4c-3.98993,0.28356 -8,1 -10,1c-2,0 -5.07843,0.21015 -8,-1c-4.13171,-1.71141 -7.20682,-3.81266 -9,-6c-2.28589,-2.78833 -4.3851,-5.37201 -7,-9c-1.65381,-2.29454 -4.34619,-4.70546 -6,-7c-1.30745,-1.81399 -2.41885,-4.41886 -4,-6c-1.58115,-1.58114 -3.41885,-1.41886 -5,-3c-1.58115,-1.58114 -1.29289,-2.29289 -2,-3c-0.70711,-0.70711 -2,0 -3,0c-1,0 -2,0 -3,0c-1,0 -2,0 -3,0c-1,0 -1,0 -2,0l-1,0" id="svg_1" stroke-width="5" stroke="#000000" fill="none"/>
+							</g>
+						</svg>
+					</div>
+					<span class='username'>Rob</span>
+					This is a chat with text
+				</div>
+				<div class='chat'><span class='username'>Rob</span> This is a chat with text</div>
+				<div class='chat'><span class='username'>Rob</span> This is a chat with text</div>
+				<div class='chat'><span class='username'>Rob</span> This is a chat with text</div>
+				<div class='chat'><span class='username'>Rob</span> This is a chat with text</div>
+				<div class='chat'><span class='username'>Rob</span> This is a chat with text</div>
+			</div>
+		</div>
+		<div id='chat-commands'>
+			<input id='chat-text-input' placeholder='Say something...'/>
+			<div id='chat-buttons'>
+				<div class='button' id='send-chat'>Send</div>
+				<div class='button' id='create-drawing'>Draw</div>
+			</div>
+		</div>
+	</div>
+
+	<div id='content' class='scrollable'>
+		<div id='video-title'>
+			<h2>Video Title</h2>
+		</div>
+		<div id='video-player'>
+			<div id='mock-embedded-video'>
+				(Video goes here)
+			</div>
+		</div>
+		<table id='video-track-container'>
+			<tr>
+				<td>
+					<div id='video-track'></div>
+					<div id='track-slider'></div>
+				</td>
+				<td id='video-controls'>
+					<div class='button button-small'>S</div>
+					<div class='button button-small'>P</div>
+				</td>
+			</tr>
+		</table>
+		<div id='comment-feed-wrapper'>
+			<div id='comment-feed-box'>
+				<div>
+					<div id='comment-feed' class='scrollable'>
+						<div class='comment'><span class='username'>Rob</span>This is a comment</div>
+						<div class='tag'><span class='username'>Prof. A.</span>This is a tag</div>
+						<div class='comment'><span class='username'>Rob</span>This is a comment</div>
+						<div class='comment'><span class='username'>Rob</span>This is a comment
+							<div class='reply'><span class='username'>John</span>This is a reply</div>
+						</div>
+						<div class='tag'><span class='username'>Prof. A.</span>This is a tag</div>
+						<div class='comment'><span class='username'>Rob</span>This is a comment</div>
+						<div class='comment'><span class='username'>Rob</span>This is a comment</div>
+						<div class='tag'><span class='username'>John</span>This is a tag</div>
+						<div class='tag'><span class='username'>Prof. A.</span>This is a tag</div>
+						<div class='tag'><span class='username'>Prof. A.</span>This is a tag</div>
+					</div>
+				</div>
+				<div id='comment-controls'>
+					<input id='comment-text' placeholder='Comment...'/>
+					<div id='' class='button button-small'>Options</div>
+					<div id='send-comment' class='button button-small'>Send</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id='drawing'></div>
+</body>
+</html>

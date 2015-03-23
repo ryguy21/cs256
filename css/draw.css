@@ -1,0 +1,81 @@
+
+#drawing
+{
+	position:fixed;
+	left:40px;
+	top:90px;
+	right:340px;
+	bottom:40px;
+	background:#fff;
+	border:1px solid #555;
+	display:none;
+}
+
+#drawing.show
+{
+	display:block;
+}
+
+#drawing > *
+{
+	display:table;
+	width:100%;
+	height:100%;
+}
+
+#drawing > * > *
+{
+	display:table-cell;
+}
+
+#drawing *
+{
+	cursor:url(draw.cur), default;
+}
+
+#drawing .pn *
+{
+	cursor:url(pn.cur), url(draw.cur), default;
+}
+
+#drawing .pp *
+{
+	cursor:url(pp.cur), url(draw.cur), default;
+}
+
+#drawing .pz *
+{
+	cursor:url(pz.cur), url(draw.cur), default;
+}
+
+#drawing .zp *
+{
+	cursor:url(zp.cur), url(draw.cur), default;
+}
+
+#drawing .zz *
+{
+	cursor:url(zz.cur), url(draw.cur), default;
+}
+
+#drawing .eraser *
+{
+	cursor:url(eraser.cur), default;
+}
+
+#drawing-tools
+{
+	width:40px;
+	border-left:1px solid #555;
+	cursor:default !important;
+	padding:5px;
+}
+
+#drawing-tools .button
+{
+	float:left;
+	min-width:30px;
+	margin-bottom:5px;
+	padding:5px;
+	cursor:pointer;
+}
