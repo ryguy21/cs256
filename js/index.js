@@ -1,4 +1,4 @@
-addLoadFunction(function()
+window.onload = function()
 {
 	var userIn = document.getElementById('username')
 	var passIn = document.getElementById('password')

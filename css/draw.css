@@ -4,63 +4,72 @@
 	position:fixed;
 	left:40px;
 	top:90px;
-	right:340px;
+	right:420px;
 	bottom:40px;
 	background:#fff;
 	border:1px solid #555;
 	display:none;
+	z-index:50;
 }
 
-#drawing.show
+#drawing-background
 {
-	display:block;
+	position:fixed;
+	left:0;
+	top:0;
+	right:0;
+	bottom:0;
+	background:#bbb;
+	opacity:0.5;
+	display:none;
 }
 
-#drawing > *
+#drawing #drawing-content
 {
 	display:table;
 	width:100%;
 	height:100%;
 }
 
-#drawing > * > *
+#drawing.show,
+#drawing-background.show
+{
+	display:block;
+}
+
+#drawing-content > *
 {
 	display:table-cell;
 }
 
-#drawing *
-{
-	cursor:url(draw.cur), default;
-}
-
 #drawing .pn *
 {
-	cursor:url(pn.cur), url(draw.cur), default;
+	cursor:url(../cursors/pn.cur), url(../cursors/draw.cur), default;
 }
 
 #drawing .pp *
 {
-	cursor:url(pp.cur), url(draw.cur), default;
+	cursor:url(../cursors/pp.cur), url(../cursors/draw.cur), default;
 }
 
 #drawing .pz *
 {
-	cursor:url(pz.cur), url(draw.cur), default;
+	cursor:url(../cursors/pz.cur), url(../cursors/draw.cur), default;
 }
 
 #drawing .zp *
 {
-	cursor:url(zp.cur), url(draw.cur), default;
+	cursor:url(../cursors/zp.cur), url(../cursors/draw.cur), default;
 }
 
 #drawing .zz *
 {
-	cursor:url(zz.cur), url(draw.cur), default;
+	cursor:url(../cursors/zz.cur), url(../cursors/draw.cur), default;
 }
 
 #drawing .eraser *
 {
-	cursor:url(eraser.cur), default;
+	cursor:url(../cursors/eraser.cur), default;
 }
 
 #drawing-tools
@@ -69,12 +78,14 @@
 	border-left:1px solid #555;
 	cursor:default !important;
 	padding:5px;
+	background:#555;
 }
 
 #drawing-tools .button
 {
 	float:left;
 	min-width:30px;
+	max-width:30px;
 	margin-bottom:5px;
 	padding:5px;
 	cursor:pointer;

@@ -71,7 +71,7 @@ addLoadFunction(function()
 		var canvas = get('current-canvas')
 		textInput = get('chat-text-input')
 		var text = textInput.value
-		if (text == '' && canvas == null)
+		if (text == '' && (canvas == null || get('current-drawing').innerHTML == ''))
 		{
 			return
 		}
@@ -81,7 +81,7 @@ addLoadFunction(function()
 		var chat = document.createElement('div')
 		chat.className = 'chat'
 
-		if (canvas != null)
+		if (canvas != null && get('current-drawing').innerHTML != '')
 		{
 			var drawingBox = document.createElement('div')
 			drawingBox.className = 'drawing'
@@ -93,7 +93,7 @@ addLoadFunction(function()
 
 			var width = canvas.width.baseVal.value
 			var height = canvas.height.baseVal.value
-			get('drawing').className = ''
+			closeDrawingPane()
 
 			var scale = 1.0
 			if (width > height)
@@ -115,7 +115,6 @@ addLoadFunction(function()
 
 			drawingBox.appendChild(canvas)
 			chat.appendChild(drawingBox)
-
 		}
 
 		var username = 'Rob'
@@ -128,8 +127,15 @@ addLoadFunction(function()
 		var chatbox = get('chatbox')
 		chatbox.appendChild(chat)
 		chatbox.scrollTop = chatbox.scrollHeight
+
+		if (closeDrawingPane)
+		{
+			closeDrawingPane()
+		}
 	}
 
+	get('view-chat').onclick = openChatPane
+	get('content').onclick = closeChatPane
 	get('send-chat').onclick = SendChat
 	get('chat-text-input').onkeyup = function(e)
 	{
@@ -139,3 +145,29 @@ addLoadFunction(function()
 		}
 	}
 })
+
+function openChatPane()
+{
+	var pane = get('chatpane')
+	if (pane.style.right == '' || pane.style.right == '-300px')
+	{
+		pane.style.right = 0
+		get('view-chat').className = 'button chat-button open'
+	}
+	else
+	{
+		closeChatPane()
+	}
+}
+
+function closeChatPane()
+{
+	get('chatpane').style.right = '-300px'
+	var drawing = get('drawing')
+	get('view-chat').className = 'button chat-button'
+
+	if (closeDrawingPane)
+	{
+		closeDrawingPane()
+	}
+}

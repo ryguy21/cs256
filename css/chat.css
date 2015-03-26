@@ -6,34 +6,72 @@
 	right:-300px;
 	height:100%;
 	background:#fff;
-	border-left:1px solid #555;
 	z-index:100;
-	transition:right 0.2s;
-	padding-top:50px;
+	transition:right 0.6s;
+	padding-top:30px;
 	display:table;
 }
 
-#chatpane > *
+#chatpane > div
 {
 	display:table-row;
+	background:#555;
+	color:white;
 }
 
-#chatroom
+#chatpane .button.chat-button
 {
-	background:#fff;
-	height:29px;
+	position:absolute;
+	bottom:20px;
+	left:-100px;
+	background:#c01;
+	min-width:0;
+	width:80px;
+	height:80px;
+	border-radius:40px;
+	border:none;
+	padding:4px 0;
+	font-size:14pt;
+	color:white;
+	transition:transform 0.6s, opacity 0.6s;
+}
+
+#chatpane .chat-button .text
+{
+	transition:inherit;
+	position:relative;
+	display:block;
+	height:24px;
+	width:60px;
+	top:24px;
+	left:9px;
+	text-align:center;
+	opacity:0;
+	background:#c01;
+	transform:rotate(180deg);
+}
+
+#chatpane .chat-button.open
+{
+	transform:rotate(-180deg);
+}
+
+#chatpane .chat-button.open .text
+{
+	opacity:1;
+}
+
+div#chatroom
+{
+	height:28px;
 	padding:4px;
 	cursor:pointer;
-}
-
-#chats
-{
-	background:#fff;
+	background:white;
+	color:#333;
 }
 
 #chat-commands
 {
-	background:#fff;
 	height:50px;
 }
 
@@ -53,9 +91,9 @@
 	font-size:10pt;
 	padding:4px 8px;
 	border:1px solid #555;
-	width:100%;
-	border-left:none;
-	border-right:none;
+	width:95%;
+	margin-left:2.5%;
+	border-radius:4px;
 }
 
 #chat-buttons
@@ -64,17 +102,42 @@
 	margin:15px;
 }
 
-#chat-buttons > .button
+#chat-buttons .button
 {
-	margin:0 10px;
-	padding:10px;
+	margin:0 30px;
+	padding:20px 0;
+	width:60px;
+	height:60px;
+	background:#c01;
+	border-radius:30px;
+	min-width:0;
+}
+
+#chatpane .button.chat-button:hover,
+#chatpane .button.chat-button:hover *,
+#chat-buttons .button:hover
+{
+	background:#dd0017;
+}
+
+#chatpane .button.chat-button:active,
+#chatpane .button.chat-button:active *,
+#chat-buttons .button:active
+{
+	background:#aa0007;
+	box-shadow:none;
+}
+
+#chat-buttons .button:active
+{
+	box-shadow:3px 3px 5px rgba(200,200,200,0.5) inset;
 }
 
 .chat,
 .comment,
 .tag
 {
-	margin:10px auto;
+	margin:0 auto;
 	border:1px solid #555;
 	border-radius:5px;
 	padding:5px;
@@ -112,9 +175,10 @@
 {
 	border:1px solid #555;
 	border-radius:4px;
-	margin:0 auto 5px;
+	margin:0 auto 1px;
 	width:250px;
 	padding:0;
+	background:white;
 }
 
 .drawing svg

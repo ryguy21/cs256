@@ -5,20 +5,20 @@ addLoadFunction(function()
 		var drawing = get('drawing')
 		if (drawing.classList.contains('show'))
 		{
-			drawing.className = ''
-			get('canvas-container').innerHTML = ''
+			closeDrawingPane()
 		}
 		else
 		{
 			drawing.className = 'show'
+			get('drawing-background').className = 'show'
 			createDrawingPane()
 		}
 	}
 
-	get('cancel-drawing').onclick = function()
+	get('cancel-drawing').onclick = closeDrawingPane
+	get('clear-drawing').onclick = function()
 	{
-		get('drawing').className = ''
-		get('canvas-container').innerHTML = ''
+		get('current-drawing').innerHTML = ''
 	}
 
 	var tools = get('drawing-tools').querySelectorAll('.button')
@@ -31,7 +31,7 @@ addLoadFunction(function()
 			continue
 		}
 
-		if (tool.id == 'cancel-drawing')
+		if (tool.id == 'cancel-drawing' || tool.id == 'clear-drawing')
 		{
 			return
 		}
@@ -58,6 +58,18 @@ addLoadFunction(function()
 	}
 })
 
+function closeDrawingPane()
+{
+	var drawing = get('drawing')
+	drawing.removeAttribute('class')
+	get('drawing-background').removeAttribute('class')
+	get('canvas-container').innerHTML = ''
+
+	drawing.onmousedown = drawing.ontouchstart = undefined
+	drawing.onmousemove = drawing.ontouchmove = undefined
+	drawing.onmouseup = drawing.ontouchend = undefined
+}
+
 function createDrawingPane()
 {
 	var svg = document.createElementNS(SVGNS, 'svg')
@@ -79,19 +91,6 @@ function createCanvas(canvas)
 
 	function addPoint(e)
 	{
-		if (canvas.parentNode.getAttribute('data-done'))
-		{
-			drawing.removeEventListener('mousedown', drawStart)
-			drawing.removeEventListener('touchstart', drawStart)
-
-			drawing.removeEventListener('mousemove', addPoint)
-			drawing.removeEventListener('touchmove', addPoint)
-
-			drawing.removeEventListener('mouseup', drawEnd)
-			drawing.removeEventListener('touchend', drawEnd)
-			return
-		}
-
 		if (e instanceof TouchEvent && e.touches.length < 1)
 		{
 			return
@@ -129,7 +128,7 @@ function createCanvas(canvas)
 			curve.setAttribute('d', 'M' + pt.x + ',' + pt.y)
 			curve.setAttribute('fill', 'none')
 			curve.setAttribute('stroke-linecap', 'round')
-			curve.setAttribute('stroke', options.color || '#333')
+			curve.setAttribute('stroke', options.color || 'black')
 			curve.setAttribute('stroke-width', options.stroke || 5)
 			canvas.appendChild(curve)
 			return curve
@@ -232,12 +231,7 @@ function createCanvas(canvas)
 		curves = null
 	}
 
-	drawing.addEventListener('mousedown', drawStart)
-	drawing.addEventListener('touchstart', drawStart)
-
-	drawing.addEventListener('mousemove', addPoint)
-	drawing.addEventListener('touchmove', addPoint)
-
-	drawing.addEventListener('mouseup', drawEnd)
-	drawing.addEventListener('touchend', drawEnd)
+	drawing.onmousedown = drawing.ontouchstart = drawStart
+	drawing.onmousemove = drawing.ontouchmove = addPoint
+	drawing.onmouseup = drawing.ontouchend = drawEnd
 }
