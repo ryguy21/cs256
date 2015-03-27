@@ -1,11 +1,16 @@
+@font-face {
+	font-family:'Geomanist';
+	src:url('fonts/geomanist-regular-webfont.ttf');
+}
+
 *
 {
 	box-sizing:border-box;
+	font-family:'Geomanist';
 }
 
 body
 {
-	font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
 	margin:0;
 	position:fixed;
 	width:100%;
