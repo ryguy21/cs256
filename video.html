@@ -4,9 +4,10 @@
 	<title>Japan 101/102 - Menu</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/chat.css">
+	<link rel="stylesheet" type="text/css" href="css/draw.css">
+	<link rel="stylesheet" type="text/css" href="css/menu.css">
 	<link rel="stylesheet" type="text/css" href="css/video.css">
 	<script type="text/javascript" src='js/utils.js'></script>
-	<script type="text/javascript" src='js/header.js'></script>
 	<script type="text/javascript" src='js/chat.js'></script>
 	<script type="text/javascript" src='js/draw.js'></script>
 	<script type="text/javascript" src='js/video.js'></script>
@@ -14,16 +15,7 @@
 <body>
 	<div class='header'>
 		<div class='header-item header-item-left'>Japan 101/102</div>
-		<a href='index.html' class='header-item header-item-left button'>Logout</a>
-		<a href='menu.html' class='header-item header-item-left button'>Menu</a>
-
-		<a href='#' class='header-item header-item-right button' id='view-chat'>Chat</a>
-		<div class='header-item header-item-right'>
-			<div class='button button-small toggle-on' id='translate-toggle'>T</div>
-			<div class='button button-small toggle-off' id='search-toggle'>S</div>
-			<input id='search' placeholder='Translate...'/>
-			<div class='button button-small'>Go</div>
-		</div>
+		<a id='logout' href='index.html' class='header-item header-item-right button'>Username</a>
 	</div>
 
 	<div id='chatpane'>
@@ -31,7 +23,7 @@
 			<div class='dropdown closed' id='chatroom-selector'>
 				<span class='dropdown-arrow'>V</span>
 				<div class='dropdown-item unselectable'>
-					<input id='create-room-name' placeholder='Room name'/>
+					<input id='create-room-name' placeholder='New room'/>
 					<div class='button button-small' id='create-room'>Create</div>
 				</div>
 				<div class='dropdown-item selected'>Room 1</div>
@@ -41,10 +33,11 @@
 			</div>
 		</div>
 		<div id='chats'>
+			<a href='#' class='button chat-button' id='view-chat'><span class='text'>hide</span>chat</a>
 			<div id='chatbox' class='scrollable'>
 				<div class='chat'><span class='username'>Rob</span> This is a chat with text</div>
 				<div class='chat'><span class='username'>Rob</span> This is a chat with text</div>
-				<div class='chat'><span class='username'>Rob</span> This is a chat with text</div>
+				<div class='chat'><span class='username'>Rob</span> This is a chat with text and lots more text blah blah blah blah blah blah blah blah blah blah</div>
 				<div class='chat'><span class='username'>Rob</span> This is a chat with text</div>
 				<div class='chat'><span class='username'>Rob</span> This is a chat with text</div>
 				<div class='chat'>
@@ -60,7 +53,7 @@
 				</div>
 				<div class='chat'><span class='username'>Rob</span> This is a chat with text</div>
 				<div class='chat'><span class='username'>Rob</span> This is a chat with text</div>
-				<div class='chat'><span class='username'>Rob</span> This is a chat with text</div>
+				<div class='chat'><span class='username'>Rob</span> This is a chat with text and lots more text blah blah blah blah blah blah blah blah blah blah</div>
 				<div class='chat'><span class='username'>Rob</span> This is a chat with text</div>
 				<div class='chat'><span class='username'>Rob</span> This is a chat with text</div>
 			</div>
@@ -68,9 +61,15 @@
 		<div id='chat-commands'>
 			<input id='chat-text-input' placeholder='Say something...'/>
 			<div id='chat-buttons'>
-				<div class='button' id='send-chat'>Send</div>
-				<div class='button' id='create-drawing'>Draw</div>
+				<div class='button' id='send-chat'>send</div>
+				<div class='button' id='create-drawing'>draw</div>
 			</div>
+		</div>
+	</div>
+
+	<div id='search-div'>
+		<div>
+			<input id='search' type='search' placeholder='Search...'/>
 		</div>
 	</div>
 
@@ -122,6 +121,21 @@
 		</div>
 	</div>
 
-	<div id='drawing'></div>
+	<div id='drawing'>
+		<div id='drawing-content'>
+			<div id='canvas-container' class='pp'></div>
+			<div id='drawing-tools' data-tool='pp'>
+				<img class='button toggle-off' data-tool='zz' src='img/zz.png'/>
+				<img class='button toggle-on' data-tool='pp' src='img/pp.png'/>
+				<img class='button toggle-off' data-tool='pn' src='img/pn.png'/>
+				<img class='button toggle-off' data-tool='pz' src='img/pz.png'/>
+				<img class='button toggle-off' data-tool='zp' src='img/zp.png'/>
+				<img class='button toggle-off' data-tool='eraser' src='img/eraser.png'/>
+				<img class='button' id='clear-drawing' data-tool='clear' src='img/clear.png'/>
+				<img class='button' id='cancel-drawing' src='img/cancel.png'/>
+			</div>
+		</div>
+	</div>
+	<div id='drawing-background'></div>
 </body>
 </html>
