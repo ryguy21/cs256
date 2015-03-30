@@ -74,13 +74,11 @@ header {
 	margin: 0 auto;
 	position: relative;
 	top: 130px;
-	outline: 2px solid red;
 }
 #notification_title {
 	font-size: 2.3em;
 	color: rgb(70,70,70);
 	height: 30px;
-	background-color: lime;
 	line-height: ;
 	margin: 0 0 6px;
 }
@@ -89,11 +87,48 @@ header {
 	top: 5%;
 	height: 90%;
 	margin-left: 10px;
+	opacity: .55;
+	transition: opacity .1s linear;
+}
+#notification_title img:hover{
+	opacity: 1;
 }
 #notification_btns_cont {
 	height: 70px;
 	width: 100%;
-	background-color: fuchsia;
+	outline: 1px solid rgb(230,230,230);
+}
+.notification_btn {
+	height: 100%;
+	line-height: 74px;
+	font-size: 1.8em;
+	width: 33.3333333333%;
+	text-align: center;
+	display: inline-block;
+	background-color: rgb(255,255,255);
+	cursor: default;
+	position: relative;
+	user-select:none;
+	-webkit-user-select:none;
+	transition: background-color .1s linear 0s, color .1s linear 0s;
+}
+#notification_btns_cont > div{
+	/* the ALL btn */
+	width: 25%;
+}
+#notification_btns_cont > div+div{
+	/* the COMMENTS and QUESTIONS btns */
+	width: 37.5%;
+}
+.notification_btn:hover {
+	background-color: rgb(65,65,65);
+	color: rgb(255,255,255);
+}
+.notification_btn > img {
+	position: absolute;
+	height: 26px;
+	top: 4px;
+	right: 8px;
 }
 
 
@@ -128,13 +163,15 @@ header {
 	color: rgb(130,130,130);
 	outline: 5px solid rgba(194,0,15,0);
 	cursor: default;
-	transition: color .15s linear 0s, outline .15s linear 0s;
+	
 }
 .sort_by_btn:hover {
+	transition: color .15s linear 0s, outline .15s linear 0s;
 	color: rgb(70,70,70);
 }
 
 .sort_by_cont .selected{
+	transition: color .15s linear 0s, outline .15s linear 0s;
 	outline: 5px solid rgba(194,0,15,1);
 	color: rgb(70,70,70);
 }
