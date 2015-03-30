@@ -1,0 +1,44 @@
+#search-div .button.library-button
+{
+	position:absolute;
+	top:40px;
+	left:15px;
+	background: #404040;
+	min-width:0;
+	width:80px;
+	height:80px;
+	border-radius:40px;
+	border:none;
+	padding:4px 0;
+	font-size:14pt;
+	color:white;
+	transition:transform 0.6s, opacity 0.6s;
+}
+
+#search-div .library-button .text
+{
+	transition:inherit;
+	position:relative;
+	display:block;
+	height:24px;
+	width:60px;
+	top:24px;
+	left:9px;
+	text-align:center;
+	opacity:0;
+	background:#c01;
+	transform:rotate(180deg);
+}
+
+#search-div .button.library-button:hover,
+#search-div .button.library-button:hover *
+{
+	background:#595959;
+}
+
+#search-div .button.chat-button:active,
+#search-div .button.chat-button:active *
+{
+	background:#aa0007;
+	box-shadow:none;
+}
