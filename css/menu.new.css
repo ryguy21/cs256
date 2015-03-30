@@ -1,0 +1,59 @@
+html, body {
+	margin:0;
+	padding:0;
+	font-family: "Geomanist";
+}
+
+header {
+	height: 40px;
+	width: 100%;
+	background-color: rgb(85,85,85);
+	position: relative;
+	z-index: 2;
+}
+
+.search_notification_sect {
+	height: 400px;
+	background-color: rgb(240,239,238);
+	/*box-shadow: 0 1px 5px rgba(0,0,0,.2);*/
+}
+
+.video_sect {
+	width: 90%;
+	max-width: 800px;
+	height: 1000px;
+	margin: 0 auto;
+	background-color: red;
+}
+
+.sort_by_cont {
+	background-color: lime;
+	padding: 30px 0 70px;
+}
+
+.sort_by_cont div{
+	font-size: 1.8em;
+	float: left;
+	background-color: lime;
+	padding: 4px 8px;
+}
+.sort_by_cont div:first-child {
+	padding: 4px 8px 4px 0;
+}
+
+.sort_by_btn {
+	margin-left: 90px;
+	color: rgb(130,130,130);
+	outline: 5px solid rgba(194,0,15,0);
+	transition: color .15s linear 0s, outline .15s linear 0s;
+}
+.sort_by_btn:hover {
+	color: rgb(70,70,70);
+}
+
+.sort_by_cont .selected{
+	outline: 5px solid rgba(194,0,15,1);
+	color: rgb(70,70,70);
+}
+
+
