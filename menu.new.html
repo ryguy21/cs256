@@ -181,6 +181,20 @@
 
 </script>
 
+<script type="text/javascript">
+	window.addEventListener("load", function(){
+		var videoScreens = document.querySelectorAll(".video");
+
+		for (var i = 0; i < videoScreens.length; i++){
+			videoScreens[i].addEventListener("click", function(){
+				//alert("Clicked it!");
+				window.location.href = "video.html";
+			});
+		}
+	})
+		
+</script>
+
 </body>
 
 </html>
