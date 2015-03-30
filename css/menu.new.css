@@ -14,6 +14,35 @@ header {
 	z-index: 2;
 }
 
+.upload_cont {
+	color: white;
+	font-size: 1.5em;
+	line-height: 40px;
+	width: 175px;
+	position: absolute;
+	top: 0;
+	cursor: pointer;
+	right: 25%;
+}
+.upload_cont:hover {
+	text-decoration: underline;
+}
+.upload_cont img{
+	height: 40px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+	transition: .075s linear 0s;
+}
+/*.upload_cont img:hover{
+	height: 50px;
+	position: absolute;
+	top: -5px;
+	right: -10px;
+	cursor: pointer;
+}*/
+
 .search_notification_sect {
 	height: 360px;
 	background-color: rgb(240,239,238);
@@ -237,10 +266,10 @@ header {
 		background-image: url(../img/shinto1.jpg);
 	}
 	#video4 {
-		background-image: url(../img/sushi1.jpg);
+		background-image: url(../img/anime1.jpg);
 	}
 	#video5 {
-		background-image: url(../img/sushi1.jpg);
+		background-image: url(../img/blastoise.jpg);
 	}
 
 .video_stats{
