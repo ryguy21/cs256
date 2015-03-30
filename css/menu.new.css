@@ -2,6 +2,8 @@ html, body {
 	margin:0;
 	padding:0;
 	font-family: "Geomanist";
+	font-size: 100%;
+	line-height: 1;
 }
 
 header {
@@ -17,6 +19,53 @@ header {
 	background-color: rgb(240,239,238);
 	/*box-shadow: 0 1px 5px rgba(0,0,0,.2);*/
 }
+	#search_bar_cont {
+		width: 90%;
+		height: 25px;
+		max-width: 600px;
+		margin: 0 auto;
+		position: relative;
+		top: 50px;
+	}
+
+	#search_bar {
+		display: block;
+		width: 100%;
+		height: 100%;
+		outline: none;
+		border: 1px solid rgb(225,225,225);
+		border-radius: 5px;
+		font-size: 1.3em;
+		line-height: 30px;
+		color: rgb(70,70,70);
+		text-indent: 3px;
+		font-family: "Geomanist";
+	}
+
+	#search_btn {
+		position: absolute;
+		top: 4px;
+		right: 4px;
+		outline: none;
+		border: none;
+		background: none;
+		height: 21px;
+		width: 30px;
+		background-image: url(../img/mag_glass.png);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+		cursor: pointer;
+		transition: top .08s linear 0s, width .08s linear 0s, height .08s linear 0s;
+	}
+	#search_btn:hover {
+		top: -4px;
+		height: 40px;
+		width: 40px;
+	}
+
+
+
 
 .video_sect {
 	width: 90%;
