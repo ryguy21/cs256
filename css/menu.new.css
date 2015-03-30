@@ -295,6 +295,12 @@ header {
 	#video5 {
 		background-image: url(../img/blastoise.jpg);
 	}
+	#video6 {
+		background-image: url(../img/shrineGirls.jpg);
+	}
+	#video7 {
+		background-image: url(../img/gate.jpg);
+	}
 
 .video_stats{
 	width: 45%;
