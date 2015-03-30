@@ -162,19 +162,19 @@ input:focus
 	float:right;
 }
 
-#logout
+.header-item.button
 {
-	background:#555;
-	color:white;
-	box-shadow:none;
+	background:none !important;
+	color:white !important;
+	box-shadow:none !important;
 }
 
-#logout:hover
+.header-item.button:hover
 {
 	border:1px solid white;
 }
 
-#logout:active
+.header-item.button:active
 {
 	color:#c01;
 }
