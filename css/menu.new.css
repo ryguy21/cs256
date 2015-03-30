@@ -15,10 +15,12 @@ header {
 }
 
 .search_notification_sect {
-	height: 400px;
+	height: 360px;
 	background-color: rgb(240,239,238);
+
 	/*box-shadow: 0 1px 5px rgba(0,0,0,.2);*/
 }
+	/*Search Bar*/
 	#search_bar_cont {
 		width: 90%;
 		height: 25px;
@@ -59,13 +61,44 @@ header {
 		transition: top .08s linear 0s, width .08s linear 0s, height .08s linear 0s;
 	}
 	#search_btn:hover {
-		top: -4px;
-		height: 40px;
-		width: 40px;
+		top: -3px;
+		height: 36px;
+		width: 36px;
 	}
 
+/*Notifications*/
+
+#notification_cont {
+	width: 90%;
+	max-width: 600px;
+	margin: 0 auto;
+	position: relative;
+	top: 130px;
+	outline: 2px solid red;
+}
+#notification_title {
+	font-size: 2.3em;
+	color: rgb(70,70,70);
+	height: 30px;
+	background-color: lime;
+	line-height: ;
+	margin: 0 0 6px;
+}
+#notification_title img{
+	position: relative;
+	top: 5%;
+	height: 90%;
+	margin-left: 10px;
+}
+#notification_btns_cont {
+	height: 70px;
+	width: 100%;
+	background-color: fuchsia;
+}
 
 
+
+/*Video Section*/
 
 .video_sect {
 	width: 90%;
@@ -94,6 +127,7 @@ header {
 	margin-left: 90px;
 	color: rgb(130,130,130);
 	outline: 5px solid rgba(194,0,15,0);
+	cursor: default;
 	transition: color .15s linear 0s, outline .15s linear 0s;
 }
 .sort_by_btn:hover {
