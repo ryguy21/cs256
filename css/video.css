@@ -1,70 +1,197 @@
 
+
+.search_notification_sect {
+	height: 290px;
+	background-color: rgb(240,239,238);
+	padding: 40px 0 0;
+	/*box-shadow: 0 1px 5px rgba(0,0,0,.2);*/
+}
+	/*Search Bar*/
+	#search_bar_cont {
+		width: 90%;
+		height: 25px;
+		max-width: 600px;
+		margin: 0 auto;
+		position: relative;
+		top: 40px;
+	}
+
+	#search_bar {
+		display: block;
+		width: 100%;
+		height: 100%;
+		outline: none;
+		border: 1px solid rgb(225,225,225);
+		border-radius: 5px;
+		font-size: 1.3em;
+		line-height: 30px;
+		color: rgb(70,70,70);
+		text-indent: 3px;
+		font-family: "Geomanist";
+	}
+
+	#search_btn {
+		position: absolute;
+		top: 4px;
+		right: 4px;
+		outline: none;
+		border: none;
+		background: none;
+		height: 21px;
+		width: 30px;
+		background-image: url(../img/mag_glass.png);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+		cursor: pointer;
+		transition: top .08s linear 0s, width .08s linear 0s, height .08s linear 0s;
+	}
+	#search_btn:hover {
+		top: -3px;
+		height: 36px;
+		width: 36px;
+	}
+
+	/*FIXED HEADER*/
+.fixed_search_sect {
+	position: fixed;
+	top: 40px;
+	width: 100%;
+	height: 50px;
+	padding: 0;
+	background-color: rgb(240,239,238);
+	z-index: 10;
+	box-shadow: 0 1px 8px rgba(0,0,0,.25);
+}
+.fixed_search_sect #search_bar_cont {
+	width: 90%;
+	height: 25px;
+	max-width: 600px;
+	margin: 0 auto;
+	position: relative;
+	top: 10px;
+}
+.fixed_search_sect #notification_cont{
+	display: none;
+}
+
+/*Notifications*/
+
+#edit_vid_cont {
+	width: 90%;
+	max-width: 600px;
+	margin: 0 auto;
+	position: relative;
+	top: 70px;
+}
+#edit_vid_title {
+	font-size: 2.3em;
+	color: rgb(70,70,70);
+	height: 40px;
+	line-height: ;
+	margin: 0 0 6px;
+}
+#edit_vid_title img{
+	position: relative;
+	top: 5%;
+	height: 90%;
+	margin-left: 10px;
+	opacity: .55;
+
+	transition: opacity .1s linear 0s;
+}
+#edit_vid_title img:hover{
+	opacity: 1;
+}
+#edit_vid_btns_cont {
+	height: 70px;
+	width: 100%;
+	outline: 1px solid rgb(230,230,230);
+}
+.edit_vid_btn {
+	height: 100%;
+	line-height: 74px;
+	font-size: 1.8em;
+	width: 33.3333333333%;
+	text-align: center;
+	display: inline-block;
+	background-color: rgb(255,255,255);
+	cursor: default;
+	position: relative;
+	user-select:none;
+	-webkit-user-select:none;
+	transition: background-color .1s linear 0s, color .1s linear 0s;
+}
+#edit_vid_btns_cont > div{
+	/* the Tags btn */
+	width: 25%;
+}
+#edit_vid_btns_cont > div+div{
+	/* the Subtitles btns */
+	width: 36%;
+}
+#edit_vid_btns_cont > div+div+div{
+	/* the Restrictions Btn */
+	width: 39%;
+}
+.edit_vid_btn:hover {
+	background-color: rgb(65,65,65);
+	color: rgb(255,255,255);
+}
+.edit_vid_btn > img {
+	position: absolute;
+	height: 26px;
+	top: 4px;
+	right: 8px;
+}
+
+/**/
+h2	{
+	font-size: 2em;
+}
 #video-player
 {
 	background:#222;
-	border:1px solid #222;
+	background-color: red;
+	width: 750px;
+	margin: 0 auto;
+
 }
 
 #video-player > *
 {
-	margin:0 auto;
+	/*margin:0 auto;*/
 }
 
 #mock-embedded-video
 {
 	height:500px;
 	background:#fff;
-	width:700px;
+	width:100%;
 	text-align:center;
 	font-size:20pt;
 	color:#c00;
 	line-height:500px;
+	background-color: rgb(60,60,60);
+	margin: 0;
+	padding: 0;
+	margin: 0 auto;
 }
+
+#mock-embedded-video > video {
+	display: block;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
 
 #video-track-container
 {
 	width:100%;
 }
 
-#video-track
-{
-	position:relative;
-	top:10px;
-	height:10px;
-	left:10px;
-	right:10px;
-	border:1px solid;
-	cursor:pointer;
-}
 
-#track-slider
-{
-	position:relative;
-	top:-10px;
-	width:12px;
-	height:30px;
-	left:3px;
-	border:1px solid;
-	background:#fff;
-	cursor:pointer;
-	cursor:-webkit-grab;
-	cursor:-moz-grab;
-	-webkit-user-select:none;
-	-moz-user-select:none;
-	-ms-user-select:none;
-}
-
-#video-controls
-{
-	width:100px;
-	vertical-align:initial;
-}
-
-#video-track-container .button
-{
-	float:right;
-	margin-left:5px;
-}
 
 #comment-feed-wrapper
 {

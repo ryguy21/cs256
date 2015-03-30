@@ -5,7 +5,11 @@
 	<meta name="" charset="UTF-8" content="Description Here">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Japan 101/102 | Menu</title>
+	
 	<link rel="stylesheet" type="text/css" href="css/menu.new.css">
+	<link rel="stylesheet" type="text/css" href="css/chat.css">
+	<link rel="stylesheet" type="text/css" href="css/draw.css">
+
 	<!-- <link rel="icon" type="image/png" href="images/favicon.png">-->
 </head>
 
@@ -34,6 +38,27 @@
 		</div>
 
 	</section>
+	
+	<!-- FIXED HEADER SECTION -->
+	<section class="fixed_search_sect" style="display:none;">
+
+		<form id="search_bar_cont">
+			<input id="search_bar">
+			<button id="search_btn"></button>
+		</form>
+
+		<div id="notification_cont">
+			<div id="notification_title">Notifications <img src="img/cog.png"></div>
+			<div id="notification_btns_cont">
+				<div id="all_btn" class="notification_btn">All</div><!--
+				--><div id="comments_btn" class="notification_btn">Comments</div><!--
+				--><div id="questions_btn" class="notification_btn">Questions<img src="img/alert.png"></div>
+			</div>
+		</div>
+
+	</section>
+
+
 
 	<section id="video_sect" class="video_sect">
 		<div id="sort_by_cont" class="sort_by_cont">
@@ -129,8 +154,32 @@
 
 	</section>
 
+
+	
+
 <!-- <script type="text/javascript" src="js/script.js"></script> -->
 <script type="text/javascript" src="main.new.js"></script>
+<script type="text/javascript" src='js/utils.js'></script>
+<script type="text/javascript" src='js/chat.js'></script>
+<script type="text/javascript" src='js/draw.js'></script>
+<script type="text/javascript" src='js/video.js'></script>
+
+<script type="text/javascript">
+	var fixed_search_sect = document.getElementsByClassName("fixed_search_sect")[0];
+
+
+	window.addEventListener("scroll", checkPageHeight);
+
+	function checkPageHeight(){
+		if(window.pageYOffset > 290){
+			fixed_search_sect.style.display = "block";
+		} else {
+			fixed_search_sect.style.display = "none";
+		}
+	}
+	checkPageHeight();
+
+</script>
 
 </body>
 

@@ -1,7 +1,7 @@
-#search-div .button.library-button
+#search_notification_sect .button.library-button
 {
 	position:absolute;
-	top:40px;
+	top:50px;
 	left:15px;
 	background: #404040;
 	min-width:0;
@@ -16,7 +16,7 @@
 	z-index: 1;
 }
 
-#search-div .library-button .text
+#search_notification_sect .library-button .text
 {
 	transition:inherit;
 	position:relative;

@@ -14,10 +14,15 @@
 	<script type="text/javascript" src='js/video.js'></script>
 </head>
 <body>
-	<div class='header'>
+	<!-- <div class='header'>
 		<div class='header-item header-item-left'>Japan 101/102</div>
 		<a id='logout' href='index.html' class='header-item header-item-right button'>Username</a>
-	</div>
+	</div> -->
+	<header>
+		<div class="upload_cont">
+				upload <img src="img/add_new.png">
+		</div>
+	</header>
 
 	<div id='chatpane'>
 		<div id='chatroom'>
@@ -68,12 +73,51 @@
 		</div>
 	</div>
 
-	<div id='search-div'>
+	<!-- <div id='search-div'>
 		<a href='menu.new.html' class='button library-button' id='view-library'><span class='text'>hide</span>library</a>
 		<div>
 			<input id='search' type='search' placeholder='Search...'/>
 		</div>
-	</div>
+	</div> -->
+	<section id="search_notification_sect" class="search_notification_sect">
+
+		<a href='menu.new.html' class='button library-button' id='view-library'><span class='text'>hide</span>library</a>
+
+		<form id="search_bar_cont">
+			<input id="search_bar">
+			<button id="search_btn"></button>
+		</form>
+
+		<div id="edit_vid_cont">
+			<div id="edit_vid_title">Edit Video <img src="img/cog.png"></div>
+			<div id="edit_vid_btns_cont">
+				<div id="all_btn" class="edit_vid_btn">Tags</div><!--
+				--><div id="comments_btn" class="edit_vid_btn">Subtitles</div><!--
+				--><div id="questions_btn" class="edit_vid_btn">Restrictions<img src="img/alert.png"></div>
+			</div>
+		</div>
+
+	</section>
+
+	<!-- FIXED HEADER SECTION -->
+	<section class="fixed_search_sect" style="display:none;">
+
+		<form id="search_bar_cont">
+			<input id="search_bar">
+			<button id="search_btn"></button>
+		</form>
+
+		<div id="notification_cont">
+			<div id="notification_title">Notifications <img src="img/cog.png"></div>
+			<div id="notification_btns_cont">
+				<div id="all_btn" class="notification_btn">All</div><!--
+				--><div id="comments_btn" class="notification_btn">Comments</div><!--
+				--><div id="questions_btn" class="notification_btn">Questions<img src="img/alert.png"></div>
+			</div>
+		</div>
+
+	</section>
+
 
 	<div id='content' class='scrollable'>
 		<div id='video-title'>
@@ -87,18 +131,7 @@
 				</video>
 			</div>
 		</div>
-		<table id='video-track-container'>
-			<tr>
-				<td>
-					<div id='video-track'></div>
-					<div id='track-slider'></div>
-				</td>
-				<td id='video-controls'>
-					<div class='button button-small'>S</div>
-					<div class='button button-small'>P</div>
-				</td>
-			</tr>
-		</table>
+		
 		<div id='comment-feed-wrapper'>
 			<div id='comment-feed-box'>
 				<div>
@@ -142,5 +175,28 @@
 		</div>
 	</div>
 	<div id='drawing-background'></div>
+
+
+
+
+	<script type="text/javascript">
+	// FOR THE FIXED HEADER ON SCROLL
+	// ==============================
+
+	var fixed_search_sect = document.getElementsByClassName("fixed_search_sect")[0];
+
+
+	window.addEventListener("scroll", checkPageHeight);
+
+	function checkPageHeight(){
+		if(window.pageYOffset > 200){
+			fixed_search_sect.style.display = "block";
+		} else {
+			fixed_search_sect.style.display = "none";
+		}
+	}
+	checkPageHeight();
+
+</script>
 </body>
 </html>

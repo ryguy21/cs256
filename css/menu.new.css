@@ -6,12 +6,23 @@ html, body {
 	line-height: 1;
 }
 
+@font-face {
+	font-family:'Geomanist';
+	src:url('fonts/geomanist-regular-webfont.ttf');
+}
+
+* *
+{
+	font-family:'Geomanist';
+}
+
+
 header {
 	height: 40px;
 	width: 100%;
 	background-color: rgb(85,85,85);
-	position: relative;
-	z-index: 2;
+	position: fixed;
+	z-index: 10;
 }
 
 .upload_cont {
@@ -46,7 +57,7 @@ header {
 .search_notification_sect {
 	height: 360px;
 	background-color: rgb(240,239,238);
-
+	padding: 40px 0 0;
 	/*box-shadow: 0 1px 5px rgba(0,0,0,.2);*/
 }
 	/*Search Bar*/
@@ -161,6 +172,29 @@ header {
 	right: 8px;
 }
 
+
+/*ADDED THIS*/
+.fixed_search_sect {
+	position: fixed;
+	top: 40px;
+	width: 100%;
+	height: 50px;
+	padding: 0;
+	background-color: rgb(240,239,238);
+	z-index: 10;
+	box-shadow: 0 1px 8px rgba(0,0,0,.25);
+}
+.fixed_search_sect #search_bar_cont {
+	width: 90%;
+	height: 25px;
+	max-width: 600px;
+	margin: 0 auto;
+	position: relative;
+	top: 10px;
+}
+.fixed_search_sect #notification_cont{
+	display: none;
+}
 
 
 /*Video Section*/
