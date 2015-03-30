@@ -116,7 +116,19 @@ addLoadFunction(function()
 		var chat = document.createElement('div')
 		chat.className = 'chat'
 
-		// first, add the drawing if any
+		// fake username, should get this legitimately
+		var username = 'Rob'
+
+		// create username element
+		var name = document.createElement('span')
+		name.className = 'username'
+		name.innerText = username
+		chat.appendChild(name)
+
+		// append chat text
+		chat.appendChild(document.createTextNode(' ' + text))
+
+		// next, add the drawing if any
 		if (canvas != null && get('current-drawing').innerHTML != '')
 		{
 			// create drawing container for chat list
@@ -160,17 +172,7 @@ addLoadFunction(function()
 			chat.appendChild(drawingBox)
 		}
 
-		// fake username, should get this legitimately
-		var username = 'Rob'
-
-		// create username element
-		var name = document.createElement('span')
-		name.className = 'username'
-		name.innerText = username
-		chat.appendChild(name)
-
-		// append chat text
-		chat.appendChild(document.createTextNode(' ' + text))
+		
 
 		// append the newly created chat element to the chat box
 		var chatbox = get('chatbox')

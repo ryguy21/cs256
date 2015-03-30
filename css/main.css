@@ -107,7 +107,6 @@ header {
 input:focus
 {
 	outline:none;
-	box-shadow:0 0 5px #69f;
 }
 
 .dropdown
@@ -165,7 +164,7 @@ input:focus
 	top:0;
 	left:0;
 	right:0;
-	height:30px;
+	height:40px;
 	border-bottom:1px solid #555;
 	background:#555;
 	z-index:200;
@@ -175,11 +174,11 @@ input:focus
 {
 	display:block;
 	height:100%;
-	vertical-align:middle;
+	line-height:40px;
 	text-align:center;
 	min-width:100px;
 	border-radius:0;
-	padding:2px 15px;
+	padding:0 15px;
 	text-decoration:none;
 	color:white;
 	font-size:15pt;
@@ -202,19 +201,19 @@ input:focus
 	float:right;
 }
 
-#logout
+.header-item.button
 {
-	background:#555;
-	color:white;
-	box-shadow:none;
+	background:none !important;
+	color:white !important;
+	box-shadow:none !important;
 }
 
-#logout:hover
+.header-item.button:hover
 {
 	border:1px solid white;
 }
 
-#logout:active
+.header-item.button:active
 {
 	color:#c01;
 }
@@ -222,11 +221,10 @@ input:focus
 #search-div
 {
 	height:400px;
-	margin-bottom:;
-	margin-top:30px;
+	margin-bottom:-350px;
+	margin-top:40px;
 	background:#f0f0f0;
 	padding-top:20px;
-	background-color: red;
 }
 
 #search-div > div
@@ -262,15 +260,21 @@ input:focus
 	margin-top:10px;
 	/*overflow-y:scroll;*/
 	z-index:0;
+<<<<<<< HEAD
 	/*background-color: lime;*/
+=======
+>>>>>>> d1828dd1119f6290dbc16943caf3a33c19a7ddc9
 }
 
-#content-shadow
+.content-holder
 {
-	position:fixed;
-	left:0;
-	top:90px;
-	width:100%;
-	height:10px;
-	box-shadow:0 5px 5px #f0f0f0 inset;
+	width:90%;
+	max-width:900px;
+	margin:0 auto;
+	margin-bottom:100px;
+}
+
+.content-holder *
+{
+	box-sizing:content-box;
 }

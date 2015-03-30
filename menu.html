@@ -6,14 +6,17 @@
 	<link rel="stylesheet" type="text/css" href="css/chat.css">
 	<link rel="stylesheet" type="text/css" href="css/draw.css">
 	<link rel="stylesheet" type="text/css" href="css/menu.css">
+	<link rel="stylesheet" type="text/css" href="css/menu.new.css">
 	<script type="text/javascript" src='js/utils.js'></script>
 	<script type="text/javascript" src='js/chat.js'></script>
 	<script type="text/javascript" src='js/draw.js'></script>
+	<script type="text/javascript" src='js/main.new.js'></script>
 </head>
 <body>
 	<div class='header'>
 		<div class='header-item header-item-left'>Japan 101/102</div>
 		<a id='logout' href='index.html' class='header-item header-item-right button'>Username</a>
+		<a id='upload' href='#' class='header-item header-item-right button'>Upload New</a>
 	</div>
 
 	<div id='chatpane'>
@@ -33,11 +36,11 @@
 		<div id='chats'>
 			<a href='#' class='button chat-button' id='view-chat'><span class='text'>hide</span>chat</a>
 			<div id='chatbox' class='scrollable'>
-				<div class='chat'><span class='username'>Rob</span> This is a chat with text</div>
-				<div class='chat'><span class='username'>Rob</span> This is a chat with text</div>
-				<div class='chat'><span class='username'>Rob</span> This is a chat with text and lots more text blah blah blah blah blah blah blah blah blah blah</div>
-				<div class='chat'><span class='username'>Rob</span> This is a chat with text</div>
-				<div class='chat'><span class='username'>Rob</span> This is a chat with text</div>
+				<div class='chat'><span class='username'>Rob</span> Arigatou gozaimasu!</div>
+				<div class='chat'><span class='username'>Tim</span> np...I can't remember how to say "you're welcome"</div>
+				<div class='chat'><span class='username'>Leah</span> it's "Dou itashimashite"</div>
+				<div class='chat'><span class='username'>Tim</span> right. I knew that, I just couldn't think of it. It kinda sounds like "don't touch my mustache"</div>
+				<div class='chat'><span class='username'>Miruka</span>lol!</div>
 				<div class='chat'>
 					<div class='drawing'>
 						<svg>
@@ -46,14 +49,14 @@
 							</g>
 						</svg>
 					</div>
-					<span class='username'>Rob</span>
-					This is a chat with text
+					<span class='username'>Tim</span>
+					is that supposed to be a mustache?
 				</div>
-				<div class='chat'><span class='username'>Rob</span> This is a chat with text</div>
-				<div class='chat'><span class='username'>Rob</span> This is a chat with text</div>
-				<div class='chat'><span class='username'>Rob</span> This is a chat with text and lots more text blah blah blah blah blah blah blah blah blah blah</div>
-				<div class='chat'><span class='username'>Rob</span> This is a chat with text</div>
-				<div class='chat'><span class='username'>Rob</span> This is a chat with text</div>
+				<div class='chat'><span class='username'>Miruka</span>lol, no. My brother drew that while I was getting some water</div>
+				<div class='chat'><span class='username'>Lin</span> What does "wakannai" mean?</div>
+				<div class='chat'><span class='username'>Rob</span> I dunno</div>
+				<div class='chat'><span class='username'>Lin</span> That's so weird! that's what everybody says when I ask them! even people who speak fluently! How can nobody know what it means when it's used so much?</div>
+				<div class='chat'><span class='username'>Rob</span> No, "wakannai" means "I don't know". It's very informal.</div>
 			</div>
 		</div>
 		<div id='chat-commands'>
@@ -67,146 +70,117 @@
 
 	<div id='search-div'>
 		<div>
-			<input id='search' type='search' placeholder='Search...'/>
+			<!-- <input id='search' type='search' placeholder='Search...'/> -->
+			<div id="search_bar_cont">
+				<input id="search_bar">
+				<button id="search_btn"></button>
+			</div>
 		</div>
 	</div>
 
 	<div id='content' class='scrollable'>
-		<div id='menu-list'>
-			<a href='video.html' class='video-item button'>
-				<div class='video-thumb'></div>
-				<h2 class='video-title'>Video Title</h2>
-				<div class='video-details'>
-					<span class='video-detail'>
-						<span class='video-detail-header'>Tags</span>
-						contents
-					</span>
-					<span class='video-detail'>
-						<span class='video-detail-header'>Comments</span>
-						contents
-					</span>
-					<span class='video-detail'>
-						<span class='video-detail-header'>Questions</span>
-						contents
-					</span>
-					<span class='video-detail'>
-						<span class='video-detail-header'>Answers</span>
-						contents
-					</span>
-				</div>
-			</a>
-			<a href='video.html' class='video-item button'>
-				<div class='video-thumb'></div>
-				<h2 class='video-title'>Video Title</h2>
-				<div class='video-details'>
-					<span class='video-detail'>
-						<span class='video-detail-header'>Tags</span>
-						contents
-					</span>
-					<span class='video-detail'>
-						<span class='video-detail-header'>Comments</span>
-						contents
-					</span>
-					<span class='video-detail'>
-						<span class='video-detail-header'>Questions</span>
-						contents
-					</span>
-					<span class='video-detail'>
-						<span class='video-detail-header'>Answers</span>
-						contents
-					</span>
-				</div>
-			</a>
-			<a href='video.html' class='video-item button'>
-				<div class='video-thumb'></div>
-				<h2 class='video-title'>Video Title</h2>
-				<div class='video-details'>
-					<span class='video-detail'>
-						<span class='video-detail-header'>Tags</span>
-						contents
-					</span>
-					<span class='video-detail'>
-						<span class='video-detail-header'>Comments</span>
-						contents
-					</span>
-					<span class='video-detail'>
-						<span class='video-detail-header'>Questions</span>
-						contents
-					</span>
-					<span class='video-detail'>
-						<span class='video-detail-header'>Answers</span>
-						contents
-					</span>
-				</div>
-			</a>
-			<a href='video.html' class='video-item button'>
-				<div class='video-thumb'></div>
-				<h2 class='video-title'>Video Title</h2>
-				<div class='video-details'>
-					<span class='video-detail'>
-						<span class='video-detail-header'>Tags</span>
-						contents
-					</span>
-					<span class='video-detail'>
-						<span class='video-detail-header'>Comments</span>
-						contents
-					</span>
-					<span class='video-detail'>
-						<span class='video-detail-header'>Questions</span>
-						contents
-					</span>
-					<span class='video-detail'>
-						<span class='video-detail-header'>Answers</span>
-						contents
-					</span>
-				</div>
-			</a>
-			<a href='video.html' class='video-item button'>
-				<div class='video-thumb'></div>
-				<h2 class='video-title'>Video Title</h2>
-				<div class='video-details'>
-					<span class='video-detail'>
-						<span class='video-detail-header'>Tags</span>
-						contents
-					</span>
-					<span class='video-detail'>
-						<span class='video-detail-header'>Comments</span>
-						contents
-					</span>
-					<span class='video-detail'>
-						<span class='video-detail-header'>Questions</span>
-						contents
-					</span>
-					<span class='video-detail'>
-						<span class='video-detail-header'>Answers</span>
-						contents
-					</span>
-				</div>
-			</a>
-			<a href='video.html' class='video-item button'>
-				<div class='video-thumb'></div>
-				<h2 class='video-title'>Video Title</h2>
-				<div class='video-details'>
-					<span class='video-detail'>
-						<span class='video-detail-header'>Tags</span>
-						contents
-					</span>
-					<span class='video-detail'>
-						<span class='video-detail-header'>Comments</span>
-						contents
-					</span>
-					<span class='video-detail'>
-						<span class='video-detail-header'>Questions</span>
-						contents
-					</span>
-					<span class='video-detail'>
-						<span class='video-detail-header'>Answers</span>
-						contents
-					</span>
-				</div>
-			</a>
+		<div id="notification_cont">
+			<div id="notification_title">Notifications <img src="img/cog.png"></div>
+			<div id="notification_btns_cont">
+				<div id="all_btn" class="notification_btn">All</div><!--
+				--><div id="comments_btn" class="notification_btn">Comments</div><!--
+				--><div id="questions_btn" class="notification_btn">Questions<img src="img/alert.png"></div>
+			</div>
 		</div>
-		<div id='content-shadow'></div>
+
+		<div class='content-holder'>
+			<div id="sort_by_cont" class="sort_by_cont">
+				<div>Sort By:</div>
+				<div id="chapter_btn" class="sort_by_btn selected">Chapter</div>
+				<div id="recent_act_btn" class="sort_by_btn">Recent Activity</div>
+			</div>
+
+			<div class="chapter_header">Chapter 1</div>
+
+			<div id="" class="videos_cont">
+				<div class="video left">
+					<div id="video1" class="video_screen"></div>
+					<div class="video_stats">
+						<div class="video_title">City Life</div>
+						<div class="num_comments num_data">3 Comments</div>
+						<div class="num_questions num_data">3 Questions</div>
+						<div class="num_answers num_data">3 Answers</div>
+						<div class="num_tags num_data">3 Tags</div>
+					</div>
+				</div>
+				<div class="video right">
+					<div id="video2" class="video_screen"></div>
+					<div class="video_stats">
+						<div class="video_title">Cuisine</div>
+						<div class="num_comments num_data">3 Comments</div>
+						<div class="num_questions num_data">3 Questions</div>
+						<div class="num_answers num_data">3 Answers</div>
+						<div class="num_tags num_data">3 Tags</div>
+					</div>
+				</div>
+				<div class="video left">
+					<div id="video3" class="video_screen"></div>
+					<div class="video_stats">
+						<div class="video_title">Shinto</div>
+						<div class="num_comments num_data">3 Comments</div>
+						<div class="num_questions num_data">3 Questions</div>
+						<div class="num_answers num_data">3 Answers</div>
+						<div class="num_tags num_data">3 Tags</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="chapter_header">Chapter 2</div>
+
+			<div id="" class="videos_cont">
+				<div class="video left">
+					<div id="video4" class="video_screen"></div>
+					<div class="video_stats">
+						<div class="video_title">Entertainment</div>
+						<div class="num_comments num_data">3 Comments</div>
+						<div class="num_questions num_data">3 Questions</div>
+						<div class="num_answers num_data">3 Answers</div>
+						<div class="num_tags num_data">3 Tags</div>
+					</div>
+				</div>
+				<div class="video right">
+					<div id="video5" class="video_screen"></div>
+					<div class="video_stats">
+						<div class="video_title">Anime</div>
+						<div class="num_comments num_data">3 Comments</div>
+						<div class="num_questions num_data">3 Questions</div>
+						<div class="num_answers num_data">3 Answers</div>
+						<div class="num_tags num_data">3 Tags</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="chapter_header">Chapter 3</div>
+
+			<div id="" class="videos_cont">
+				<div class="video left">
+					<div id="video4" class="video_screen"></div>
+					<div class="video_stats">
+						<div class="video_title">Japanese Religion</div>
+						<div class="num_comments num_data">3 Comments</div>
+						<div class="num_questions num_data">3 Questions</div>
+						<div class="num_answers num_data">3 Answers</div>
+						<div class="num_tags num_data">3 Tags</div>
+					</div>
+				</div>
+				<div class="video right">
+					<div id="video5" class="video_screen"></div>
+					<div class="video_stats">
+						<div class="video_title">Japanese Religion</div>
+						<div class="num_comments num_data">3 Comments</div>
+						<div class="num_questions num_data">3 Questions</div>
+						<div class="num_answers num_data">3 Answers</div>
+						<div class="num_tags num_data">3 Tags</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 	</div>
 
 	<div id='drawing'>
