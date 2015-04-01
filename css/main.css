@@ -158,7 +158,7 @@ input:focus
 	display:block;
 }
 
-/*.header
+.header
 {
 	position:absolute;
 	top:0;
@@ -168,7 +168,7 @@ input:focus
 	border-bottom:1px solid #555;
 	background:#555;
 	z-index:200;
-}*/
+}
 
 .header-item
 {
@@ -260,10 +260,6 @@ input:focus
 	margin-top:10px;
 	/*overflow-y:scroll;*/
 	z-index:0;
-<<<<<<< HEAD
-	/*background-color: lime;*/
-=======
->>>>>>> d1828dd1119f6290dbc16943caf3a33c19a7ddc9
 }
 
 .content-holder
