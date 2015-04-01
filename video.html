@@ -90,11 +90,36 @@
 			<h2>Video Title</h2>
 		</div>
 		<div id='video-player'>
-			<div id='mock-embedded-video'>
-				<video id="video1" width="740" height="500" controls>
-  				<source src="videos/12A_01.mp4" type="video/mp4">
-				Your browser does not support the video tag.
-				</video>
+			<video id="video1" width="740" height="500">
+				<source src="videos/12A_01.mp4" type="video/mp4">
+			Your browser does not support the video tag.
+			</video>
+			<div id='video-controls'>
+				<div id='main-video-controls'>
+					<div class='video-button' id='play-pause-btn'><img src='img/play.png'/></div>
+					<div class='video-button' id='mute-btn'><img src='img/volume.png'/></div>
+					<div id='video-time'>00:00</div>
+					<div class='video-slider-control'>
+						<span class='slider-track horizontal'></span>
+						<img class='video-slider' src='img/play_cursor.png'/>
+					</div>
+					<div class='video-button' id='maximize-btn'><img src='img/resize.png'/></div>
+				</div>
+				<div id='hover-video-controls'>
+					<div class='radio-container' id='speed-control'>
+						<span>speed</span>
+						<span class='radio-item'>0.5x</span><!--
+						--><span class='radio-item'>0.75x</span><!--
+						--><span class='radio-item selected'>1.0x</span><!--
+						--><span class='radio-item'>1.5x</span><!--
+						--><span class='radio-item'>2.0x</span>
+					</div>
+					<div class='radio-container' id='subtitle-control'>
+						<span>subtitles</span>
+						<span class='radio-item'>on</span><!--
+						--><span class='radio-item selected'>off</span>
+					</div>
+				</div>
 			</div>
 		</div>
 
@@ -142,23 +167,5 @@
 	</div>
 	<div id='drawing-background'></div>
 
-	<script type="text/javascript">
-	// FOR THE FIXED HEADER ON SCROLL
-	// ==============================
-
-	var fixed_search_sect = document.getElementsByClassName("fixed_search_sect")[0];
-
-
-	window.addEventListener("scroll", checkPageHeight);
-
-	function checkPageHeight(){
-		if(window.pageYOffset > 0){
-			fixed_search_sect.style.display = "block";
-		} else {
-			fixed_search_sect.style.display = "none";
-		}
-	}
-	checkPageHeight();
-	</script>
 </body>
 </html>
