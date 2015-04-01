@@ -16,9 +16,6 @@
 	<div class='header'>
 		<div class='header-item header-item-left'>Japan 101/102</div>
 		<a id='logout' href='index.html' class='header-item header-item-right button'>Username</a>
-		<div class="upload_cont">
-			upload <img src="img/add_new.png">
-		</div>
 	</div>
 
 	<div id='chatpane'>
@@ -78,6 +75,14 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- FIXED HEADER SECTION -->
+	<section class="fixed_search_sect">
+		<form id="search_bar_cont">
+			<input id="search_bar">
+			<button id="search_btn"></button>
+		</form>
+	</section>
 
 	<div id='content' class='scrollable'>
 		<div id="notification_cont">
@@ -213,6 +218,24 @@
 			}
 		})
 
+	</script>
+	<script type="text/javascript">
+	// FOR THE FIXED HEADER ON SCROLL
+	// ==============================
+
+	var fixed_search_sect = document.getElementsByClassName("fixed_search_sect")[0];
+
+
+	window.addEventListener("scroll", checkPageHeight);
+
+	function checkPageHeight(){
+		if(window.pageYOffset > 50){
+			fixed_search_sect.style.display = "block";
+		} else {
+			fixed_search_sect.style.display = "none";
+		}
+	}
+	checkPageHeight();
 	</script>
 </body>
 </html>

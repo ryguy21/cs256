@@ -60,6 +60,7 @@ header {
 		max-width: 600px;
 		margin: 0 auto;
 		position: relative;
+		top:40px;
 	}
 
 	#search_bar {
