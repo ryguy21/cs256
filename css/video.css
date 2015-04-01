@@ -192,7 +192,8 @@ h2	{
 {
 	line-height:30px;
 	padding:0 6px;
-	width:1%;
+	width:7%;
+	text-align:center;
 }
 
 .video-button
@@ -200,11 +201,11 @@ h2	{
 	width:4%;
 	height:30px;
 	opacity:0.75;
+	cursor:pointer;
 }
 
 .video-button img
 {
-	cursor:pointer;
 	max-width:30px;
 	max-height:20px;
 	position:absolute;
@@ -245,20 +246,22 @@ h2	{
 	left:50%;
 	top:50%;
 	transform:translate(-50%,-50%);
+	border:5px solid #666;
 	border-radius:2px;
 	background:#aaa;
+	cursor:pointer;
 }
 
 .video-slider-control .slider-track.vertical
 {
-	height:99%;
-	width:3px;
+	height:100%;
+	width:13px;
 }
 
 .video-slider-control .slider-track.horizontal
 {
-	width:99%;
-	height:3px;
+	width:100%;
+	height:13px;
 }
 
 #hover-video-controls

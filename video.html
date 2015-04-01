@@ -90,7 +90,7 @@
 			<h2>Video Title</h2>
 		</div>
 		<div id='video-player'>
-			<video id="video1" width="740" height="500">
+			<video id="video" width="740" height="500">
 				<source src="videos/12A_01.mp4" type="video/mp4">
 			Your browser does not support the video tag.
 			</video>
@@ -100,8 +100,8 @@
 					<div class='video-button' id='mute-btn'><img src='img/volume.png'/></div>
 					<div id='video-time'>00:00</div>
 					<div class='video-slider-control'>
-						<span class='slider-track horizontal'></span>
-						<img class='video-slider' src='img/play_cursor.png'/>
+						<span id='video-track' class='slider-track horizontal'></span>
+						<img id='video-slider' class='video-slider' src='img/play_cursor.png'/>
 					</div>
 					<div class='video-button' id='maximize-btn'><img src='img/resize.png'/></div>
 				</div>
