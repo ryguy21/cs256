@@ -5,35 +5,38 @@ addLoadFunction(function()
 	// play and pause functionality
 	// ================================================================
 
-	get('play-pause-btn').addEventListener('click', function(e)
+	var playInterval = -1
+	var video = get('video')
+	var playBtn = get('play-pause-btn')
+	var playImg = playBtn.querySelector('img')
+
+	playBtn.addEventListener('click', function(e)
 	{
-		var current = e.target.getAttribute('src')
-		if (current == 'img/play.png')
+		if (playImg.getAttribute('src') == 'img/play.png')
 		{
-			e.target.setAttribute('src', 'img/pause.png')
 			play()
 		}
 		else
 		{
-			e.target.setAttribute('src', 'img/play.png')
 			pause()
 		}
 	})
 
-	var playTimeout = -1
-	var video = get('video')
-
 	function play()
 	{
+		playImg.setAttribute('src', 'img/pause.png')
 		video.play()
-		playTimeout = setInterval(updateTrack, 50)
+		playInterval = setInterval(updateTrack, 50)
 	}
 
 	function pause()
 	{
+		playImg.setAttribute('src', 'img/play.png')
 		video.pause()
-		clearInterval(playTimeout)
+		clearInterval(playInterval)
 	}
+
+	video.addEventListener('ended', pause)
 
 	// ================================================================
 	// methods for updating the video time and track slider
