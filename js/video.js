@@ -137,65 +137,69 @@ addLoadFunction(function()
 		}
 	]
 
-	var defaultTags = [
-		{
-			tagId: 0,
-			timestamp: 0
-		},
-		{
-			tagId: 2,
-			timestamp: 23
-		},
-		{
-			tagId: 1,
-			timestamp: 16.5
-		}
-	]
-
-	var defaultComments = [
-		{
-			timestamp: 10,
-			userId: 'Rob',
-			text: "Why do we have to watch this? It's so staged.",
-			isQuestion: true,
-			isPrivate: false,
-			replies: []
-		},
-		{
-			timestamp: 5,
-			userId: 'Tom',
-			text: 'This comment is awesome',
-			isQuestion: false,
-			isPrivate: false,
-			replies: [
-				{
-					userId: 'Rob',
-					text: 'This comment is better'
-				}
-			]
-		},
-		{
-			timestamp: 25,
-			userId: 'Tom',
-			text: 'When was this video made? 1970?',
-			isQuestion: true,
-			isPrivate: true,
-			replies: [
-				{
-					userId: 'Josh (TA)',
-					text: "1983, actually. I know it's old, but it works."
-				}
-			]
-		},
-		{
-			timestamp: 5.4,
-			userId: 'Jill',
-			text: 'WOW this movie is old!',
-			isQuestion:false,
-			isPrivate:false,
-			replies: []
-		}
-	]
+	var videoData = {
+		videoId: 0,
+		url: '',
+		tags: [
+			{
+				tagId: 0,
+				timestamp: 0
+			},
+			{
+				tagId: 2,
+				timestamp: 23
+			},
+			{
+				tagId: 1,
+				timestamp: 16.5
+			}
+		],
+		comments: [
+			{
+				timestamp: 10,
+				userId: 'Rob',
+				text: "Why do we have to watch this? It's so staged.",
+				isQuestion: true,
+				isPrivate: false,
+				responses: []
+			},
+			{
+				timestamp: 5,
+				userId: 'Tom',
+				text: 'This comment is awesome',
+				isQuestion: false,
+				isPrivate: false,
+				responses: [
+					{
+						userId: 'Rob',
+						text: 'This comment is better'
+					}
+				]
+			},
+			{
+				timestamp: 25,
+				userId: 'Tom',
+				text: 'When was this video made? 1970?',
+				isQuestion: true,
+				isPrivate: true,
+				responses: [
+					{
+						userId: 'Josh (TA)',
+						text: "1983, actually. I know it's old, but it works."
+					}
+				]
+			},
+			{
+				timestamp: 5.4,
+				userId: 'Jill',
+				text: 'WOW this movie is old!',
+				isQuestion:false,
+				isPrivate:false,
+				responses: []
+			}
+		],
+		subtitles: []
+	}
 
 	var flashOnCreate = false
 
@@ -289,9 +293,9 @@ addLoadFunction(function()
 		el.appendChild(document.createTextNode(comment.text))
 		el.setAttribute('data-timestamp', comment.timestamp)
 
-		for (var i = 0; i < comment.replies.length; i++)
+		for (var i = 0; i < comment.responses.length; i++)
 		{
-			var reply = comment.replies[i]
+			var reply = comment.responses[i]
 
 			var replyEl = document.createElement('div')
 			replyEl.className = 'reply'
@@ -309,14 +313,14 @@ addLoadFunction(function()
 		addElementToFeed(el, comment.timestamp)
 	}
 
-	for (var i = 0; i < defaultTags.length; i++)
+	for (var i = 0; i < videoData.tags.length; i++)
 	{
-		addTag(defaultTags[i])
+		addTag(videoData.tags[i])
 	}
 
-	for (var i = 0; i < defaultComments.length; i++)
+	for (var i = 0; i < videoData.comments.length; i++)
 	{
-		addComment(defaultComments[i])
+		addComment(videoData.comments[i])
 	}
 
 	setTimeout(function()
@@ -346,7 +350,7 @@ addLoadFunction(function()
 			text: text,
 			isQuestion: false,
 			isPrivate: false,
-			replies: []
+			responses: []
 		}
 
 		defaultComments.push(comment)
