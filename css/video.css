@@ -1,10 +1,31 @@
 
+.header
+{
+	top:-40px;
+}
+
+#logout
+{
+	float:none;
+	top:40px;
+	right:0;
+	position:absolute;
+	height:50px;
+	line-height:50px;
+}
+
+#search_notification_sect .button.library-button
+{
+	top:10px !important;
+	background:#999 !important;
+	color:white !important;
+}
 
 .search_notification_sect {
 	height: 90px;
-	background-color: rgb(240,239,238);
+	background-color:#666;
 	padding:40px 0 0 0;
-	/*box-shadow: 0 1px 5px rgba(0,0,0,.2);*/
+	margin-top:-40px;
 }
 	/*Search Bar*/
 	#search_bar_cont {
@@ -23,8 +44,8 @@
 		outline: none;
 		border: 1px solid rgb(225,225,225);
 		border-radius: 5px;
-		font-size: 1.3em;
-		line-height: 30px;
+		font-size: 1.1em;
+		line-height: 25px;
 		color: rgb(70,70,70);
 		text-indent: 3px;
 		font-family: "Geomanist";
@@ -62,6 +83,7 @@
 	background-color: rgb(240,239,238);
 	z-index: 10;
 	box-shadow: 0 1px 8px rgba(0,0,0,.25);
+	display:none;
 }
 .fixed_search_sect #search_bar_cont {
 	width: 90%;

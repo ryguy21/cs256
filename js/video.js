@@ -1,6 +1,8 @@
 
 addLoadFunction(function()
 {
+	get('search_bar').addEventListener('keydown', stopEvent)
+
 	// ================================================================
 	// play and pause functionality
 	// ================================================================
@@ -190,7 +192,7 @@ addLoadFunction(function()
 				]
 			},
 			{
-				timestamp: 5.4,
+				timestamp: 7,
 				userId: 'Jill',
 				text: 'WOW this movie is old!',
 				isQuestion:false,
@@ -433,13 +435,13 @@ addLoadFunction(function()
 		{
 			var dt = (new Date - start) / 1000.0
 
-			if (dt >= 0.5)
+			if (dt >= 0.51)
 			{
-				dt = 0.5
+				dt = 0.51
 				clearInterval(intervalId)
 			}
 
-			feed.scrollTop = scale(dt, 0, 0.5, current, target)
+			feed.scrollTop = scale(dt, 0, 0.51, current, target)
 		}, 10)
 	}
 })
