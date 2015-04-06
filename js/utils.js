@@ -38,6 +38,32 @@ function scale(x, x0, x1, y0, y1)
 	return (((x - x0) * (y1 - y0)) / (x1 - x0)) + y0
 }
 
+function printTimestamp(time, fractional)
+{
+	fractional = fractional || false
+
+	if (!fractional)
+	{
+		time = Math.floor(time)
+	}
+
+	var minutes = Math.floor(time / 60)
+	var seconds = time - (minutes * 60)
+
+	if (fractional)
+	{
+		var centiseconds = Math.floor((time - Math.floor(time)) * 100)
+		seconds = Math.floor(seconds)
+
+		return pad(minutes, 2) + ':' + pad(seconds, 2) + '.' + pad(centiseconds, 2)
+	}
+	else
+	{
+		return pad(minutes, 2) + ':' + pad(seconds, 2)
+	}
+
+}
+
 function stopEvent(e)
 {
 	e.stopPropagation()

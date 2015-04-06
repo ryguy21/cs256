@@ -136,9 +136,7 @@ div#chatroom
 	box-shadow:3px 3px 5px rgba(200,200,200,0.5) inset;
 }
 
-.chat,
-.comment,
-.tag
+.chat
 {
 	margin:0 auto;
 	border:1px solid #555;
@@ -151,21 +149,9 @@ div#chatroom
 	width:90%;
 }
 
-.comment,
-.tag
-{
-	width:95%;
-	cursor:pointer;
-}
-
 .username
 {
 	font-weight:bold;
-}
-
-.tag
-{
-	background:#eee;
 }
 
 .username::after
