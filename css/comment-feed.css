@@ -1,4 +1,9 @@
 
+#content
+{
+	position:fixed;
+}
+
 #comment-feed-wrapper
 {
 	width: 100%;
