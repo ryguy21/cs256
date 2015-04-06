@@ -10,7 +10,7 @@ addLoadFunction(function()
 	var playBtn = get('play-pause-btn')
 	var playImg = playBtn.querySelector('img')
 
-	playBtn.addEventListener('click', function(e)
+	function playPause()
 	{
 		if (playImg.getAttribute('src') == 'img/play.png')
 		{
@@ -19,6 +19,19 @@ addLoadFunction(function()
 		else
 		{
 			pause()
+		}
+	}
+
+	playBtn.addEventListener('click', playPause)
+	document.body.addEventListener('keydown', function(e)
+	{
+		if (!e.defaultPrevented && e.keyCode == 32) // space
+		{
+			playPause()
+
+			e.preventDefault()
+			e.stopPropagation()
+			return false
 		}
 	})
 
@@ -84,4 +97,28 @@ addLoadFunction(function()
 			video.playbackRate = s
 		})
 	}
+
+	// ================================================================
+	// method for setting full-screen
+	// ================================================================
+
+	get('maximize-btn').addEventListener('click', function()
+	{
+		if (video.requestFullscreen)
+		{
+			video.requestFullscreen();
+		}
+		else if (video.msRequestFullscreen)
+		{
+			video.msRequestFullscreen();
+		}
+		else if (video.mozRequestFullScreen)
+		{
+			video.mozRequestFullScreen();
+		}
+		else if (video.webkitRequestFullscreen)
+		{
+			video.webkitRequestFullscreen();
+		}
+	})
 })

@@ -65,7 +65,7 @@ addLoadFunction(function()
 	}
 
 	// event listener for when the user clicks on the 'Create' button
-	get('create-room').onclick = function()
+	get('create-room').addEventListener('click', function()
 	{
 		var name = get('create-room-name').value
 
@@ -74,10 +74,11 @@ addLoadFunction(function()
 		{
 			createRoom(name)
 		}
-	}
+	})
 
 	// event listener so the user can hit enter to create a new room
-	get('create-room-name').onkeyup = function(e)
+	get('create-room-name').addEventListener('keydown', stopEvent)
+	get('create-room-name').addEventListener('keyup', function(e)
 	{
 		// if they hit enter
 		if (e.keyCode == 13)
@@ -90,7 +91,10 @@ addLoadFunction(function()
 				createRoom(name)
 			}
 		}
-	}
+
+		stopEvent(e)
+		return false
+	})
 
 	// ****************************************************************
 	// Define the chat functionality
@@ -172,7 +176,7 @@ addLoadFunction(function()
 			chat.appendChild(drawingBox)
 		}
 
-		
+
 
 		// append the newly created chat element to the chat box
 		var chatbox = get('chatbox')
@@ -191,13 +195,17 @@ addLoadFunction(function()
 	get('view-chat').onclick = openChatPane
 	get('content').onclick = closeChatPane
 	get('send-chat').onclick = SendChat
-	get('chat-text-input').onkeyup = function(e)
+	get('chat-text-input').addEventListener('keydown', stopEvent)
+	get('chat-text-input').addEventListener('keyup', function(e)
 	{
 		if (e.keyCode == 13)
 		{
 			SendChat()
 		}
-	}
+
+		stopEvent(e)
+		return false
+	})
 })
 
 function openChatPane()
