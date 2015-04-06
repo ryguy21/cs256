@@ -324,3 +324,13 @@ h2	{
 {
 	width:100%;
 }
+
+#video-title {
+	margin: 0 auto;
+	width: 740px;
+}
+
+#video-title img {
+	margin-top: 15px;
+	height: 35px;
+}
