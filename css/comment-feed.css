@@ -71,6 +71,12 @@
 	border:1px solid #f0f0f0;
 }
 
+.comment > .username::after,
+.tag > .username::after
+{
+	display:none;
+}
+
 .tag
 {
 	background:#ddd;

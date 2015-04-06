@@ -12,6 +12,12 @@
 	position:absolute;
 	height:50px;
 	line-height:50px;
+	border-color:#666;
+}
+
+#logout:hover
+{
+	border-color:white;
 }
 
 #search_notification_sect .button.library-button
