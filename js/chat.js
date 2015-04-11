@@ -204,7 +204,6 @@ addLoadFunction(function()
 		}
 	}
 
-	get('content').onclick = closeChatPane
 	get('send-chat').onclick = SendChat
 	get('send-drawing').onclick = SendChat
 	get('chat-text-input').addEventListener('keydown', stopEvent)

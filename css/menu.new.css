@@ -249,10 +249,10 @@ header {
 	width: 47.5%;
 	margin: 0 0 30px;
 }
-.left {
+.video:nth-child(2n+1) {
 	float: left;
 }
-.right {
+.video:nth-child(2n) {
 	float: right;
 }
 .video_screen{
