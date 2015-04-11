@@ -280,7 +280,7 @@ h2	{
 	height:30px;
 	left:0;
 	right:0;
-	background:red;
+	background:#c01;
 	opacity:0;
 	color:white;
 	padding:0 5px;
@@ -310,7 +310,7 @@ h2	{
 #hover-video-controls .radio-item
 {
 	cursor:pointer;
-	border:1px solid red;
+	border:1px solid #c01;
 	padding:2px 4px;
 }
 
