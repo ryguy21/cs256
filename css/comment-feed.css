@@ -29,6 +29,7 @@
 #comment-controls
 {
 	height:10px;
+	background:#666;
 }
 
 #comment-text
@@ -36,7 +37,7 @@
 	padding:4px 8px;
 	border-radius:5px;
 	border:1px solid #555;
-	margin:5px 0px 5px 10px;
+	margin:5px 0 5px 10px;
 	font-size:10pt;
 	width:540px;
 }
@@ -44,8 +45,29 @@
 #comment-controls .button
 {
 	float:right;
-	margin-top:5px;
-	margin-right:5px;
+	margin-top:0;
+	margin-bottom:0;
+	height:36px;
+	width:70px;
+	border-radius:0;
+	padding:0 8px;
+	text-align:center;
+	line-height:36px;
+	border:none;
+	background:#c01;
+	color:white;
+	position:relative;
+}
+
+#comment-controls .button:hover
+{
+	background:#dd0017;
+}
+
+#comment-controls .button:active
+{
+	background:#aa0007;
+	box-shadow:none;
 }
 
 #comment-feed-box .username
@@ -55,10 +77,20 @@
 	color:black;
 }
 
+#comment-feed-box .question > .username
+{
+	color:#00f;
+}
+
 #comment-feed-box .reply .username
 {
 	font-size:1em;
 	display:inline;
+}
+
+#comment-feed-box .username .private
+{
+	color:#c01;
 }
 
 .comment,
@@ -67,7 +99,6 @@
 	padding:10px 5px;
 	cursor:pointer;
 	transition:color 0.5s, padding 0.5s, border-color 0.5s, font-size 0.5s;
-	color:#777;
 	border:1px solid #f0f0f0;
 }
 
@@ -77,10 +108,16 @@
 	display:none;
 }
 
+.comment
+{
+	color:#777;
+}
+
 .tag
 {
-	background:#ddd;
-	border-color:#ddd;
+	background:#666;
+	border-color:#666;
+	color:#aaa;
 }
 
 .reply
@@ -93,12 +130,74 @@
 .tag.focused
 {
 	padding:15px 5px;
-	color:#333;
 	border-color:#555;
 	font-size:1.2em;
+}
+
+.comment.focused
+{
+	color:#333;
+}
+
+.tag.focused
+{
+	color:white;
 }
 
 .focused > .username
 {
 	font-size:1.5em;
+}
+
+#comment-options
+{
+  position: absolute;
+  background: white;
+  border: 1px solid #666;
+  bottom: 36px;
+  right:0;
+  display:none;
+  color:#333;
+}
+
+#comment-option-btn.show #comment-options
+{
+	display:initial;
+}
+
+#comment-options label
+{
+	display:block;
+	width:110px;
+	text-align:left;
+	line-height:2em;
+	cursor:pointer;
+}
+
+#comment-options label:hover
+{
+	background:#555;
+	color:white;
+}
+
+.comment .button
+{
+	float:right;
+	min-width:10px;
+	color:#333;
+	display:none;
+	margin-left:5px;
+}
+
+.comment:hover .button
+{
+	display:initial;
+}
+
+.comment input
+{
+	border:1px solid #555;
+	padding:3px 4px;
+	font-size:1em;
+	width:80%;
 }

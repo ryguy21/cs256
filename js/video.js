@@ -163,18 +163,21 @@ addLoadFunction(function()
 				text: "Why do we have to watch this? It's so staged.",
 				isQuestion: true,
 				isPrivate: false,
+				isAnonymous: false,
 				responses: []
 			},
 			{
 				timestamp: 5,
-				userId: 'Tom',
+				userId: 'Kaitlynn',
 				text: 'This comment is awesome',
 				isQuestion: false,
 				isPrivate: false,
+				isAnonymous: false,
 				responses: [
 					{
 						userId: 'Rob',
-						text: 'This comment is better'
+						text: 'This comment is better',
+						isAnonymous: true
 					}
 				]
 			},
@@ -187,16 +190,17 @@ addLoadFunction(function()
 				responses: [
 					{
 						userId: 'Josh (TA)',
-						text: "1983, actually. I know it's old, but it works."
+						text: "1983, actually. I know it's old, but it works.",
+						isAnonymous: false
 					}
 				]
 			},
 			{
 				timestamp: 7,
-				userId: 'Jill',
+				userId: 'Tom',
 				text: 'WOW this movie is old!',
 				isQuestion:false,
-				isPrivate:false,
+				isPrivate:true,
 				responses: []
 			}
 		],
@@ -286,10 +290,26 @@ addLoadFunction(function()
 
 		var el = document.createElement('div')
 		el.className = getCommentClassName(comment)
+		createCommentFunctionality(el, comment)
 
 		var username = document.createElement('span')
 		username.className = 'username'
-		username.innerText = comment.userId + ' @ ' + printTimestamp(comment.timestamp)
+		var displayName = comment.isAnonymous ? 'Anonymous' : comment.userId
+		username.appendChild(document.createTextNode(displayName))
+		if (comment.isQuestion)
+		{
+			username.appendChild(document.createTextNode(' asked'))
+		}
+
+		if (comment.isPrivate)
+		{
+			var pel = document.createElement('span')
+			pel.className = 'private'
+			pel.innerText = ' (private)'
+			username.appendChild(pel)
+		}
+
+		username.appendChild(document.createTextNode(' @ ' + printTimestamp(comment.timestamp)))
 
 		el.appendChild(username)
 		el.appendChild(document.createTextNode(comment.text))
@@ -297,22 +317,178 @@ addLoadFunction(function()
 
 		for (var i = 0; i < comment.responses.length; i++)
 		{
-			var reply = comment.responses[i]
-
-			var replyEl = document.createElement('div')
-			replyEl.className = 'reply'
-
-			username = document.createElement('span')
-			username.className = 'username'
-			username.innerText = reply.userId
-
-			replyEl.appendChild(username)
-			replyEl.appendChild(document.createTextNode(reply.text))
-
-			el.appendChild(replyEl)
+			createCommentReply(el, comment, i)
 		}
 
 		addElementToFeed(el, comment.timestamp)
+	}
+
+	function createCommentReply(el, comment, index)
+	{
+		var reply = comment.responses[index]
+
+		var replyEl = document.createElement('div')
+		replyEl.className = 'reply'
+
+		var username = document.createElement('span')
+		username.className = 'username'
+		username.innerText = reply.isAnonymous ? 'Anonymous' : reply.userId
+
+		replyEl.appendChild(username)
+		replyEl.appendChild(document.createTextNode(reply.text))
+
+		el.appendChild(replyEl)
+		return replyEl
+	}
+
+	function createCommentFunctionality(el, comment)
+	{
+		el.setAttribute('data-user', comment.userId)
+
+		var replyEl = document.createElement('div')
+		replyEl.className = 'button'
+		replyEl.innerText = 'Reply'
+		replyEl.addEventListener('click', function(e)
+		{
+			var el = e.target.parentNode
+
+			if (el.getAttribute('replying'))
+			{
+				return
+			}
+			el.setAttribute('replying', true)
+			e.target.setAttribute('style', 'display:none')
+
+			var user = el.getAttribute('data-user')
+			var timestamp = parseFloat(el.getAttribute('data-timestamp'))
+
+			var comment = null
+			for (var c = 0; c < videoData.comments.length; c++)
+			{
+				comment = videoData.comments[c]
+				if (comment.userId == user && comment.timestamp == timestamp)
+				{
+					break
+				}
+			}
+
+			if (comment == null)
+			{
+				return
+			}
+
+			var reply = {
+				userId: 'Tom',
+				text: '',
+				isAnonymous: false
+			}
+
+			var index = comment.responses.length
+			comment.responses.push(reply)
+
+			var replyEl = createCommentReply(el, comment, index)
+
+			var replyText = document.createElement('input')
+			replyText.setAttribute('placeholder', 'Type reply')
+			replyText.addEventListener('keydown', stopEvent)
+
+			function sendReply(e)
+			{
+				e.stopPropagation()
+				var parent = e.target.parentNode
+				var text = null
+				for (var c = 1; c < parent.children.length; c++)
+				{
+					var child = parent.children[c]
+					if (child.nodeName.toLowerCase() == 'input')
+					{
+						text = child.value
+					}
+				}
+
+				if (text == null || text.trim().length == 0)
+				{
+					return
+				}
+
+				parent.removeChild(parent.children[1]) // remove button
+				parent.removeChild(parent.children[1]) // remove text input
+				parent.appendChild(document.createTextNode(text.trim()))
+
+				var el = parent.parentNode
+				el.children[0].removeAttribute('style')
+				el.removeAttribute('replying')
+				var user = el.getAttribute('data-user')
+				var timestamp = parseFloat(el.getAttribute('data-timestamp'))
+
+				var comment = null
+				for (var c = 0; c < videoData.comments.length; c++)
+				{
+					comment = videoData.comments[c]
+					if (comment.userId == user && comment.timestamp == timestamp)
+					{
+						break
+					}
+				}
+
+				if (comment == null)
+				{
+					return
+				}
+
+				comment.responses[comment.responses.length - 1].text = text.trim()
+				console.log(videoData.comments)
+			}
+
+			replyText.addEventListener('keyup', function(e)
+			{
+				e.stopPropagation()
+
+				if (e.keyCode == 13)
+				{
+					sendReply(e)
+				}
+			})
+
+			var replyBtn = document.createElement('div')
+			replyBtn.className = 'button'
+			replyBtn.innerText = 'Post'
+			replyBtn.addEventListener('click', sendReply)
+
+			replyEl.appendChild(replyBtn)
+			replyEl.appendChild(replyText)
+			replyText.focus()
+		})
+
+		el.appendChild(replyEl)
+
+		if (comment.userId == 'Tom')
+		{
+			var delEl = document.createElement('div')
+			delEl.className = 'button'
+			delEl.innerText = 'Delete'
+			delEl.addEventListener('click', function(e)
+			{
+				e.stopPropagation()
+
+				var el = e.target.parentNode
+				var list = get('comment-feed')
+				list.removeChild(el)
+
+				var user = el.getAttribute('data-user')
+				var timestamp = parseFloat(el.getAttribute('data-timestamp'))
+				for (var c = 0; c < videoData.comments.length; c++)
+				{
+					comment = videoData.comments[c]
+					if (comment.userId == user && comment.timestamp == timestamp)
+					{
+						videoData.comments.splice(c, 1)
+					}
+				}
+			})
+
+			el.appendChild(delEl)
+		}
 	}
 
 	for (var i = 0; i < videoData.tags.length; i++)
@@ -345,13 +521,16 @@ addLoadFunction(function()
 		}
 
 		get('comment-text').value = ''
+		var optionsBtn = get('comment-option-btn')
+		optionsBtn.className = optionsBtn.className.replace(' show', '')
 
 		var comment = {
 			timestamp: video.currentTime,
-			userId: 'Rob', // create dynamically
+			userId: 'Tom', // create dynamically
 			text: text,
-			isQuestion: false,
-			isPrivate: false,
+			isQuestion: get('comment-question').checked,
+			isPrivate: get('comment-private').checked,
+			isAnonymous: get('comment-anon').checked,
 			responses: []
 		}
 
@@ -492,4 +671,17 @@ addLoadFunction(function()
 			window.location.href = 'video.html'
 		})
 	}
+
+	get('comment-option-btn').addEventListener('click', function()
+	{
+		var optionsBtn = get('comment-option-btn')
+		if (optionsBtn.className.indexOf('show') < 0)
+		{
+			optionsBtn.className += ' show'
+		}
+		else
+		{
+			optionsBtn.className = optionsBtn.className.replace(' show', '')
+		}
+	})
 })

@@ -85,8 +85,8 @@
 
 	<div id='content'>
 		<div id='video-title'>
-			<!-- <h2>VideoTitle</h2> -->
-			<img src="img/video_title.png">
+			<h2>How to Ask for a Phone Number</h2>
+			<!-- <img src="img/video_title.png"> -->
 		</div>
 		<div id='video-player'>
 			<video id="video" width="740" height="500">
@@ -125,13 +125,18 @@
 		<div id='comment-feed-wrapper'>
 			<div id='comment-feed-box'>
 				<div>
-					<div id='comment-feed' class='scrollable'>
-
-					</div>
+					<div id='comment-feed' class='scrollable'></div>
 				</div>
 				<div id='comment-controls'>
 					<input id='comment-text' placeholder='Comment...'/>
-					<div id='' class='button button-small'>Options</div>
+					<div id='comment-option-btn' class='button button-small'>
+						Options
+						<div id='comment-options'>
+							<label><input type='checkbox' id='comment-private'> Private</label><!--
+							--><label><input type='checkbox' id='comment-anon'> Anonymous</label><!--
+							--><label><input type='checkbox' id='comment-question'> Question</label>
+						</div>
+					</div>
 					<div id='send-comment' class='button button-small'>Send</div>
 				</div>
 			</div>
