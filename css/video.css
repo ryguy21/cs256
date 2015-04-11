@@ -279,9 +279,10 @@ h2	{
 	left:0;
 	right:0;
 	background:red;
-	display:none;
+	opacity:0;
 	color:white;
 	padding:0 5px;
+	transition:opacity 0.2s;
 }
 
 #hover-video-controls > :first-child
@@ -324,7 +325,8 @@ h2	{
 
 #video-player:hover #hover-video-controls
 {
-	display:block;
+	transition:opacity 0.2s 0.5s;
+	opacity:1;
 }
 
 #video-track-container
