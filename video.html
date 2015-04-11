@@ -15,8 +15,19 @@
 </head>
 <body>
 	<div class='header'>
-		<div class='header-item header-item-left'>Japan 101/102</div>
 		<a id='logout' href='index.html' class='header-item header-item-right button'>Log out</a>
+		<div class='header-item' id="search_bar_cont">
+			<input id="search_bar" placeholder='Search videos and comments'>
+				<div id='search-results'>
+					<div id='search-translate'></div>
+					<div class='result'>Result 1</div>
+					<div class='result'>Result 2</div>
+					<div class='result'>Result 3</div>
+					<div class='result'>Result 4</div>
+				</div>
+			</input>
+			<button id="search_btn"></button>
+		</div>
 	</div>
 
 	<div id='chatpane'>
@@ -70,19 +81,6 @@
 
 	<section id="search_notification_sect" class="search_notification_sect">
 		<a href='menu.html' class='button library-button' id='view-library'><span class='text'>hide</span>library</a>
-
-		<form id="search_bar_cont">
-			<input id="search_bar">
-			<button id="search_btn"></button>
-		</form>
-	</section>
-
-	<!-- FIXED HEADER SECTION -->
-	<section class="fixed_search_sect">
-		<form id="search_bar_cont">
-			<input id="search_bar">
-			<button id="search_btn"></button>
-		</form>
 	</section>
 
 	<div id='content'>

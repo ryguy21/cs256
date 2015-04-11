@@ -1,25 +1,4 @@
 
-.header
-{
-	top:-40px;
-}
-
-#logout
-{
-	float:none;
-	top:40px;
-	right:0;
-	position:absolute;
-	height:50px;
-	line-height:50px;
-	border-color:#666;
-}
-
-#logout:hover
-{
-	border-color:white;
-}
-
 #search_notification_sect .button.library-button
 {
 	top:10px !important;
@@ -35,12 +14,11 @@
 }
 	/*Search Bar*/
 	#search_bar_cont {
-		width: 90%;
-		height: 25px;
+		width: 600px;
 		max-width: 600px;
 		margin: 0 auto;
 		position: relative;
-		top:12.5px;
+		padding:13px 0 10px;
 	}
 
 	#search_bar {
@@ -50,8 +28,8 @@
 		outline: none;
 		border: 1px solid rgb(225,225,225);
 		border-radius: 5px;
-		font-size: 1.1em;
-		line-height: 25px;
+		font-size: 0.9em;
+		position:relative;
 		color: rgb(70,70,70);
 		text-indent: 3px;
 		font-family: "Geomanist";
@@ -59,8 +37,8 @@
 
 	#search_btn {
 		position: absolute;
-		top: 4px;
-		right: 4px;
+		top: 16px;
+		right: 3px;
 		outline: none;
 		border: none;
 		background: none;
@@ -71,10 +49,11 @@
 		background-position: center;
 		background-size: contain;
 		cursor: pointer;
-		transition: top .08s linear 0s, width .08s linear 0s, height .08s linear 0s;
+		transition: top .08s linear 0s, right 0.08s linear 0s, width .08s linear 0s, height .08s linear 0s;
 	}
 	#search_btn:hover {
-		top: -3px;
+		top: 8px;
+		right:0;
 		height: 36px;
 		width: 36px;
 	}

@@ -16,6 +16,18 @@
 	<div class='header'>
 		<div class='header-item header-item-left'>Japan 101/102</div>
 		<a id='logout' href='index.html' class='header-item header-item-right button'>Log out</a>
+		<div class='header-item' id="search_bar_cont">
+			<input id="search_bar" placeholder='Search videos and comments'>
+				<div id='search-results'>
+					<div id='search-translate'></div>
+					<div class='result'>Result 1</div>
+					<div class='result'>Result 2</div>
+					<div class='result'>Result 3</div>
+					<div class='result'>Result 4</div>
+				</div>
+			</input>
+			<button id="search_btn"></button>
+		</div>
 	</div>
 
 	<div id='chatpane'>
@@ -67,33 +79,16 @@
 		</div>
 	</div>
 
-	<div id='search-div'>
-		<div>
-			<div id="search_bar_cont">
-				<input id="search_bar">
-				<button id="search_btn"></button>
-			</div>
+	<div id="notification_cont">
+		<div id="notification_title">Notifications <img src="img/cog.png"></div>
+		<div id="notification_btns_cont">
+			<div id="all_btn" class="notification_btn">All</div><!--
+			--><div id="comments_btn" class="notification_btn">Comments</div><!--
+			--><div id="questions_btn" class="notification_btn">Questions<img src="img/alert.png"></div>
 		</div>
 	</div>
 
-	<!-- FIXED HEADER SECTION -->
-	<section class="fixed_search_sect">
-		<form id="search_bar_cont">
-			<input id="search_bar">
-			<button id="search_btn"></button>
-		</form>
-	</section>
-
 	<div id='content'>
-		<div id="notification_cont">
-			<div id="notification_title">Notifications <img src="img/cog.png"></div>
-			<div id="notification_btns_cont">
-				<div id="all_btn" class="notification_btn">All</div><!--
-				--><div id="comments_btn" class="notification_btn">Comments</div><!--
-				--><div id="questions_btn" class="notification_btn">Questions<img src="img/alert.png"></div>
-			</div>
-		</div>
-
 		<div class='content-holder' id='main-content'>
 			<div id="sort_by_cont" class="sort_by_cont">
 				<div>Sort By:</div>

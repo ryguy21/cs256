@@ -444,4 +444,52 @@ addLoadFunction(function()
 			feed.scrollTop = scale(dt, 0, 0.51, current, target)
 		}, 10)
 	}
+
+	var resultsTimeout = -1
+	get('search_bar').addEventListener('keyup', function(e)
+	{
+		var input = e.target
+		var results = get('search-results')
+		var term = input.value.trim()
+
+		if (term.length > 0)
+		{
+			if (resultsTimeout < 0)
+			{
+				resultsTimeout = setTimeout(function()
+				{
+					results.className = 'show'
+				}, 600)
+			}
+
+			var transBox = get('search-translate')
+			if (term.indexOf(' ') < 0)
+			{
+				transBox.innerText = '"' + term + '" in Japanese: kunichiwa'
+				transBox.removeAttribute('style')
+			}
+			else
+			{
+				transBox.setAttribute('style', 'display:none')
+			}
+		}
+		else
+		{
+			results.removeAttribute('class')
+			if (resultsTimeout > 0)
+			{
+				clearTimeout(resultsTimeout)
+				resultsTimeout = -1
+			}
+		}
+	})
+
+	var results = get('search-results').querySelectorAll('.result')
+	for (var r = 0; r < results.length; r++)
+	{
+		results[r].addEventListener('click', function()
+		{
+			window.location.href = 'video.html'
+		})
+	}
 })

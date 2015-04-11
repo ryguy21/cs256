@@ -1,57 +1,10 @@
 
-.header
-{
-	top:-40px;
-}
-
-#logout
-{
-	float:none;
-	top:40px;
-	right:0;
-	position:absolute;
-	height:50px;
-	line-height:50px;
-	border-color:#666;
-}
-
-#logout:hover
-{
-	border-color:white;
-}
-
-#notification_cont
-{
-	display:none;
-}
-
-#search-div
-{
-	top:0;
-	height:50px;
-	background:#666;
-	margin:0;
-	position:fixed;
-	width:100%;
-	z-index: 100;
-}
-
-#search-div > *
-{
-	margin-top:0;
-}
-
-#search_bar_cont
-{
-	top:-10px !important;
-}
-
 #content
 {
 	margin-top:40px;
 }
 
-.fixed_search_sect
+#notification_cont
 {
 	display:none;
 }

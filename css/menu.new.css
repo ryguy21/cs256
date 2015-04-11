@@ -55,12 +55,11 @@ header {
 }
 	/*Search Bar*/
 	#search_bar_cont {
-		width: 90%;
-		height: 30px;
+		width: 600px;
 		max-width: 600px;
-		margin: 0 auto;
-		position: relative;
-		top:40px;
+		padding:13px 0 10px;
+		position:relative;
+		margin:0 auto;
 	}
 
 	#search_bar {
@@ -70,17 +69,17 @@ header {
 		outline: none;
 		border: 1px solid rgb(225,225,225);
 		border-radius: 5px;
-		font-size: 1.3em;
-		line-height: 30px;
+		font-size: 0.9em;
 		color: rgb(70,70,70);
 		text-indent: 6px;
 		font-family: "Geomanist";
+		position:relative;
 	}
 
 	#search_btn {
 		position: absolute;
-		top: 4px;
-		right: 4px;
+		top: 16px;
+		right: 3px;
 		outline: none;
 		border: none;
 		background: none;
@@ -91,10 +90,11 @@ header {
 		background-position: center;
 		background-size: contain;
 		cursor: pointer;
-		transition: top .08s linear 0s, width .08s linear 0s, height .08s linear 0s;
+		transition: top .08s linear 0s, right 0.08s linear 0s, width .08s linear 0s, height .08s linear 0s;
 	}
 	#search_btn:hover {
-		top: -3px;
+		top: 8px;
+		right:0;
 		height: 36px;
 		width: 36px;
 	}

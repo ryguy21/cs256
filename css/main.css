@@ -26,14 +26,6 @@ html, body {
 	height:100%;
 }
 
-header {
-	height: 40px;
-	width: 100%;
-	background-color: rgb(85,85,85);
-	position: fixed;
-	z-index: 10;
-}
-
 .upload_cont {
 	color: white;
 	font-size: 1.5em;
@@ -163,17 +155,17 @@ input:focus
 	top:0;
 	left:0;
 	right:0;
-	height:40px;
+	height:50px;
 	border-bottom:1px solid #555;
-	background:#555;
-	z-index:200;
+	background:#666;
+	z-index:100;
 }
 
 .header-item
 {
 	display:block;
 	height:100%;
-	line-height:40px;
+	line-height:50px;
 	text-align:center;
 	min-width:100px;
 	border-radius:0;
@@ -181,7 +173,7 @@ input:focus
 	text-decoration:none;
 	color:white;
 	font-size:15pt;
-	background:#555;
+	background:#666;
 }
 
 .header-item > *
@@ -205,6 +197,7 @@ input:focus
 	background:none !important;
 	color:white !important;
 	box-shadow:none !important;
+	border:1px solid #666;
 }
 
 .header-item.button:hover
@@ -270,4 +263,36 @@ input:focus
 .content-holder *
 {
 	box-sizing:content-box;
+}
+
+#search-results
+{
+	display: none;
+	position: absolute;
+	top: 34px;
+	left: 0;
+	right: 0;
+	background: white;
+	border: 1px solid #555;
+	color: black;
+	text-align: left;
+	padding:0;
+	line-height: 1.1em;
+	cursor:pointer;
+}
+
+#search-results.show
+{
+	display:block;
+}
+
+#search-results > *
+{
+	padding:4px 8px;
+}
+
+#search-results .result:hover
+{
+	background:#555;
+	color:white;
 }
