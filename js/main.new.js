@@ -24,13 +24,21 @@ addLoadFunction(function()
 	    		if (chapter.toFixed() == i + 1)
 	    		{
 	    			var cont = headers[i].nextElementSibling
+	    			var added = false
 	    			for (var c = 0; c < cont.children.length; c++)
 	    			{
 	    				var cc = parseFloat(cont.children[c].getAttribute('data-chapter'))
 	    				if (chapter < cc)
 	    				{
 	    					cont.insertBefore(vid, cont.children[c])
+	    					added = true
+	    					break
 	    				}
+	    			}
+
+	    			if (!added)
+	    			{
+	    				cont.appendChild(vid)
 	    			}
 	    		}
 	    	}
@@ -71,13 +79,21 @@ addLoadFunction(function()
 	    		if (update.toFixed() == i + 1)
 	    		{
 	    			var cont = headers[i].nextElementSibling
+	    			var added = false
 	    			for (var c = 0; c < cont.children.length; c++)
 	    			{
 	    				var cu = parseFloat(cont.children[c].getAttribute('data-update'))
 	    				if (update < cu)
 	    				{
 	    					cont.insertBefore(vid, cont.children[c])
+	    					added = true
+	    					break
 	    				}
+	    			}
+
+	    			if (!added)
+	    			{
+	    				cont.appendChild(vid)
 	    			}
 	    		}
 	    	}

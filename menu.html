@@ -216,6 +216,18 @@
 	<div id='drawing-background'></div>
 
 	<script type="text/javascript">
+	    var numbers = document.getElementById('content').querySelectorAll('.num_data')
+	    for (var n = 0; n < numbers.length; n++)
+	    {
+	    	var num = numbers[n],
+	    		randNumMin = 1,
+				randNumMax = 10,
+				rand = Math.random(),
+				randInt = (Math.floor(rand * rand * (randNumMax - randNumMin + 1)) + randNumMin)
+
+	    	num.textContent = randInt + num.textContent.substr(1)
+	    }
+
 		window.addEventListener("load", function(){
 			var videoScreens = document.querySelectorAll(".video");
 
