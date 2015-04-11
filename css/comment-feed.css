@@ -113,11 +113,31 @@
 	color:#777;
 }
 
+.comment:hover
+{
+	background:#e5e5e5;
+}
+
+.comment:active
+{
+	background:#ddd;
+}
+
 .tag
 {
 	background:#666;
 	border-color:#666;
 	color:#aaa;
+}
+
+.tag:hover
+{
+	background:#777;
+}
+
+.tag:active
+{
+	background:#555;
 }
 
 .reply
