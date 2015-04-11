@@ -355,7 +355,7 @@ addLoadFunction(function()
 			responses: []
 		}
 
-		defaultComments.push(comment)
+		videoData.comments.push(comment)
 		addComment(comment)
 	}
 
