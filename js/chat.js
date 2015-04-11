@@ -192,9 +192,21 @@ addLoadFunction(function()
 		}
 	}
 
-	get('view-chat').onclick = openChatPane
+	get('view-chat').onclick = function()
+	{
+		if (closeDrawingPane)
+		{
+			var drawingClosed = closeDrawingPane()
+			if (!drawingClosed)
+			{
+				openChatPane()
+			}
+		}
+	}
+
 	get('content').onclick = closeChatPane
 	get('send-chat').onclick = SendChat
+	get('send-drawing').onclick = SendChat
 	get('chat-text-input').addEventListener('keydown', stopEvent)
 	get('chat-text-input').addEventListener('keyup', function(e)
 	{

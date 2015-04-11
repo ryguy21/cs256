@@ -190,19 +190,28 @@
 	</div>
 
 	<div id='drawing'>
-		<div id='drawing-content'>
-			<div id='canvas-container' class='pp'></div>
-			<div id='drawing-tools' data-tool='pp'>
+		<table>
+		<tr id='drawing-content'>
+			<td id='canvas-container' class='pp'></td>
+			<td id='drawing-tools' data-tool='pp'>
 				<img class='button toggle-off' data-tool='zz' src='img/zz.png'/>
 				<img class='button toggle-on' data-tool='pp' src='img/pp.png'/>
 				<img class='button toggle-off' data-tool='pn' src='img/pn.png'/>
 				<img class='button toggle-off' data-tool='pz' src='img/pz.png'/>
 				<img class='button toggle-off' data-tool='zp' src='img/zp.png'/>
-				<img class='button toggle-off' data-tool='eraser' src='img/eraser.png'/>
-				<img class='button' id='clear-drawing' data-tool='clear' src='img/clear.png'/>
-				<img class='button' id='cancel-drawing' src='img/cancel.png'/>
-			</div>
-		</div>
+				<div class='button details eraser toggle-off' data-tool='eraser'>
+					<div class='button-details'>Eraser</div>
+				</div>
+				<div class='button details clear' id='clear-drawing' data-tool='clear'>
+					<div class='button-details'>Clear</div>
+				</div>
+				<div class='button details cancel' id='cancel-drawing'>
+					<div class='button-details'>Cancel</div>
+				</div>
+			</td>
+		</tr>
+		</table>
+		<div id='send-drawing'>send</div>
 	</div>
 	<div id='drawing-background'></div>
 
@@ -218,22 +227,5 @@
 			}
 		})
 	</script>
-	<!--script type="text/javascript">
-	// FOR THE FIXED HEADER ON SCROLL
-	// ==============================
-
-	var fixed_search_sect = document.getElementsByClassName("fixed_search_sect")[0];
-
-	window.addEventListener("scroll", checkPageHeight);
-
-	function checkPageHeight(){
-		if(window.pageYOffset > 50){
-			fixed_search_sect.style.display = "block";
-		} else {
-			fixed_search_sect.style.display = "none";
-		}
-	}
-	checkPageHeight();
-	</script-->
 </body>
 </html>

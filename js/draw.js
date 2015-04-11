@@ -61,19 +61,27 @@ addLoadFunction(function()
 		tool.onclick = function(e)
 		{
 			var t = e.target
-			var index = t.getAttribute('data-index')
+			var type = t.getAttribute('data-tool')
+			if (type == null)
+			{
+				t = t.parentNode
+				type = t.getAttribute('data-tool')
+			}
+
+			var index = parseInt(t.getAttribute('data-index'))
 
 			// toggle off all other buttons...
-			for (var o in tools)
+			for (var o = 0; o < tools.length; o++)
 			{
 				if (o != index)
 				{
-					tools[o].className = 'button toggle-off'
+					// debugger
+					tools[o].className = tools[o].className.replace(' toggle-on', '')
 				}
 			}
 
 			// toggle on this button!
-			t.className = 'button toggle-on'
+			t.className += ' toggle-on'
 			var type = t.getAttribute('data-tool')
 
 			// update the drawing to use the correct tool
@@ -86,14 +94,21 @@ addLoadFunction(function()
 function closeDrawingPane()
 {
 	var drawing = get('drawing')
+	var worked = drawing.className == 'show'
 	drawing.removeAttribute('class') // removes the 'show' class, see draw.css:11, 34-38
 	get('drawing-background').removeAttribute('class')
-	get('canvas-container').innerHTML = ''
+
+	setTimeout(function()
+	{
+		get('canvas-container').innerHTML = ''
+	}, 400)
 
 	// remove event listeners! We dont' want duplicates
 	drawing.onmousedown = drawing.ontouchstart = undefined
 	drawing.onmousemove = drawing.ontouchmove = undefined
 	drawing.onmouseup = drawing.ontouchend = undefined
+
+	return worked
 }
 
 function createDrawingCanvas()
