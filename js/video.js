@@ -1,4 +1,138 @@
 
+var tags = [
+	{
+		tagId: 0,
+		text: 'Ask for phone number'
+	},
+	{
+		tagId: 1,
+		text: 'Give phone number'
+	},
+	{
+		tagId: 2,
+		text: 'Confirm phone number'
+	}
+]
+
+var videoData = {
+	videoId: 0,
+	url: '',
+	tags: [
+		{
+			tagId: 0,
+			timestamp: 0
+		},
+		{
+			tagId: 2,
+			timestamp: 23
+		},
+		{
+			tagId: 1,
+			timestamp: 16.5
+		}
+	],
+	comments: [
+		{
+			timestamp: 10,
+			userId: 'Rob',
+			text: "Why do we have to watch this? It's so staged.",
+			isQuestion: true,
+			isPrivate: false,
+			isAnonymous: false,
+			responses: []
+		},
+		{
+			timestamp: 5,
+			userId: 'Kaitlynn',
+			text: 'This comment is awesome',
+			isQuestion: false,
+			isPrivate: false,
+			isAnonymous: false,
+			responses: [
+				{
+					userId: 'Rob',
+					text: 'This comment is better',
+					isAnonymous: true
+				}
+			]
+		},
+		{
+			timestamp: 25,
+			userId: 'Tom',
+			text: 'When was this video made? 1970?',
+			isQuestion: true,
+			isPrivate: true,
+			responses: [
+				{
+					userId: 'Josh (TA)',
+					text: "1983, actually. I know it's old, but it works.",
+					isAnonymous: false
+				}
+			]
+		},
+		{
+			timestamp: 7,
+			userId: 'Tom',
+			text: 'WOW this movie is old!',
+			isQuestion:false,
+			isPrivate:true,
+			responses: []
+		}
+	],
+	subtitles: [
+		{
+			timestamp: 0,
+			duration: 2.5,
+			text: "Woman: Can I get your phone number?"
+		},
+		{
+			timestamp: 2.5,
+			duration: 1.85,
+			text: "Man: Sure, uh..."
+		},
+		{
+			timestamp: 4.35,
+			duration:2.35,
+			text: 'Do you have something to write it on?'
+		},
+		{
+			timestamp: 6.7,
+			duration:1.3,
+			text: 'Woman: Yes, let me pull it out'
+		},
+		{
+			timestamp: 8,
+			duration:1.5,
+			text: "Hang on.|Man: Okay"
+		},
+		{
+			timestamp: 17,
+			duration: 2,
+			text: "Man: 123"
+		},
+		{
+			timestamp: 19,
+			duration: 2,
+			text: "456"
+		},
+		{
+			timestamp: 21,
+			duration: 1.5,
+			text: "7890"
+		},
+		{
+			timestamp: 23.2,
+			duration: 3.8,
+			text: "Woman: That's 123 456 7890. Right?"
+		},
+		{
+			timestamp: 27,
+			duration: 1,
+			text: "Man: That's correct"
+		}
+	]
+}
+
 addLoadFunction(function()
 {
 	get('search_bar').addEventListener('keydown', stopEvent)
@@ -68,6 +202,11 @@ addLoadFunction(function()
 		{
 			updateCommentScroll()
 		}
+
+		if (updateSubtitles)
+		{
+			updateSubtitles()
+		}
 	}
 
 	get('video-track').addEventListener('click', function(e)
@@ -97,6 +236,53 @@ addLoadFunction(function()
 	}
 
 	// ================================================================
+	// methods for displaying subtitles
+	// ================================================================
+
+	get('subtitles-on').addEventListener('click', updateSubtitles)
+	get('subtitles-off').addEventListener('click', updateSubtitles)
+
+	function updateSubtitles()
+	{
+		if (get('subtitles-on').className.indexOf('selected') < 0)
+		{
+			get('video-subtitles').removeAttribute('class')
+			return
+		}
+
+		var time = video.currentTime
+		for (var s = 0; s < videoData.subtitles.length; s++)
+		{
+			var subtitle = videoData.subtitles[s]
+			if (time >= subtitle.timestamp && time < subtitle.timestamp + subtitle.duration)
+			{
+				get('video-subtitles').className = 'show'
+
+				if (subtitle.text.indexOf('|') < 0)
+				{
+					get('subtitle').innerText = subtitle.text
+				}
+				else
+				{
+					var items = subtitle.text.split('|')
+					el = get('subtitle')
+					el.innerHTML = ''
+					el.appendChild(document.createTextNode(items[0]))
+					for (var i = 1; i < items.length; i++)
+					{
+						el.appendChild(document.createElement('br'))
+						el.appendChild(document.createTextNode(items[i]))
+					}
+				}
+
+				return
+			}
+		}
+
+		get('video-subtitles').removeAttribute('class')
+	}
+
+	// ================================================================
 	// method for setting full-screen
 	// ================================================================
 
@@ -123,89 +309,6 @@ addLoadFunction(function()
 	// ================================================================
 	// methods for setting up tags/comments
 	// ================================================================
-
-	var tags = [
-		{
-			tagId: 0,
-			text: 'Ask for phone number'
-		},
-		{
-			tagId: 1,
-			text: 'Give phone number'
-		},
-		{
-			tagId: 2,
-			text: 'Confirm phone number'
-		}
-	]
-
-	var videoData = {
-		videoId: 0,
-		url: '',
-		tags: [
-			{
-				tagId: 0,
-				timestamp: 0
-			},
-			{
-				tagId: 2,
-				timestamp: 23
-			},
-			{
-				tagId: 1,
-				timestamp: 16.5
-			}
-		],
-		comments: [
-			{
-				timestamp: 10,
-				userId: 'Rob',
-				text: "Why do we have to watch this? It's so staged.",
-				isQuestion: true,
-				isPrivate: false,
-				isAnonymous: false,
-				responses: []
-			},
-			{
-				timestamp: 5,
-				userId: 'Kaitlynn',
-				text: 'This comment is awesome',
-				isQuestion: false,
-				isPrivate: false,
-				isAnonymous: false,
-				responses: [
-					{
-						userId: 'Rob',
-						text: 'This comment is better',
-						isAnonymous: true
-					}
-				]
-			},
-			{
-				timestamp: 25,
-				userId: 'Tom',
-				text: 'When was this video made? 1970?',
-				isQuestion: true,
-				isPrivate: true,
-				responses: [
-					{
-						userId: 'Josh (TA)',
-						text: "1983, actually. I know it's old, but it works.",
-						isAnonymous: false
-					}
-				]
-			},
-			{
-				timestamp: 7,
-				userId: 'Tom',
-				text: 'WOW this movie is old!',
-				isQuestion:false,
-				isPrivate:true,
-				responses: []
-			}
-		],
-		subtitles: []
-	}
 
 	var flashOnCreate = false
 

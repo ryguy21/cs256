@@ -345,3 +345,30 @@ h2	{
 	margin-top: 15px;
 	height: 35px;
 }
+
+#video-subtitles
+{
+	display:none;
+	position:absolute;
+	top:80%;
+	left:0;
+	right:0;
+	text-align: center;
+	font-size:1.3em;
+}
+
+#video-subtitles.show
+{
+	display:block;
+}
+
+#subtitle
+{
+	margin:0 auto;
+	min-width:0px;
+	max-width:600px;
+	background:rgba(0, 0, 0, 0.6);
+	color:white;
+	display:inline-block;
+	padding:4px 20px;
+}
