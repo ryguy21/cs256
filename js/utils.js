@@ -87,7 +87,8 @@ addLoadFunction(function()
 			option.setAttribute('data-index', j)
 			option.addEventListener('click', function(e)
 			{
-				e.target.className += ' selected'
+				if (e.target.className.indexOf('selected') < 0) //not already selected
+					e.target.className += ' selected'
 				var options = e.target.parentNode.querySelectorAll('.radio-item')
 				var j = e.target.getAttribute('data-index')
 
