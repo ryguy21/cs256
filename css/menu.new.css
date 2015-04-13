@@ -213,17 +213,22 @@ header {
 	color: rgb(130,130,130);
 	outline: 5px solid rgba(194,0,15,0);
 	cursor: pointer;
-
+	outline: 5px solid rgba(194,0,15,0);
+	transition: color .15s linear 0s, outline .3s linear 0s;
 }
 .sort_by_btn:hover {
-	transition: color .15s linear 0s, outline .15s linear 0s;
+	transition: color .15s linear 0s, outline .3s linear 0s;
+
 	color: rgb(70,70,70);
 }
 
-.sort_by_cont .selected{
-	transition: color .15s linear 0s, outline .15s linear 0s;
+.sort_by_btn.selected{
+	transition: color .15s linear 0s, outline .3s linear 0s;
 	outline: 5px solid rgba(194,0,15,1);
 	color: rgb(70,70,70);
+}
+.sort_by_btn.selected.fadeVideos{
+	outline: 5px solid rgba(194,0,15,0);
 }
 
 /*Videos Container*/
@@ -232,7 +237,7 @@ header {
 	color: rgb(60,60,60);
 	margin-bottom:10px;
 	opacity: 1;
-	transition: .25s ease 0s;
+	transition: .3s ease 0s;
 }
 .chapter_header.fadeVideos {
 	opacity: 0;
@@ -243,7 +248,7 @@ header {
 	width: 100%;
 	margin: 0 0 30px;
 	opacity: 1;
-	transition: opacity .25s ease 0s;
+	transition: opacity .3s ease 0s;
 }
 .videos_cont.fadeVideos{
 	opacity: 0;
