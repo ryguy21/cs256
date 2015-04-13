@@ -1,67 +1,101 @@
 
 #content
 {
-	position:fixed;
+	/*position:fixed;*/
 }
 
 #comment-feed-wrapper
 {
 	width: 100%;
-	position: absolute;
-	bottom: 45px;
-	top: 590px;
+	position: relative;
+	/*background-color: lime;*/
+	padding: 0 0 50px;
+
+	/*bottom: 45px;*/
+	/*top: 590px;*/
 }
 
 #comment-feed-box
 {
-	margin:0 auto;
-	height:100%;
-	width:700px;
-	display:table;
-	background:#f0f0f0;
-}
 
-#comment-feed-box > *
+	margin:0 auto;
+	width:750px;
+	/*display:table;*/
+	background:none;
+}
+/*#comment-feed-box > *
 {
 	display:table-row;
+}*/
+#comment-feed {
+	max-height: 450px;
+	overflow-y: scroll;
+	margin: 0 0 30px;
+	border: 1.5px solid rgb(200,200,200);
+	box-sizing: border-box;
 }
 
 #comment-controls
 {
-	height:10px;
-	background:#666;
+	/*height:10px;*/
+	position: relative;
+	/*background-color: purple;*/
+	/*background:#666;*/
 }
 
 #comment-text
 {
 	padding:4px 8px;
 	border-radius:5px;
-	border:1px solid #555;
+	border:1px solid rgb(200,200,200);
 	margin:5px 0 5px 10px;
-	font-size:10pt;
+	font-size:16px;
 	width:540px;
 }
 
 #comment-controls .button
 {
 	float:right;
-	margin-top:0;
-	margin-bottom:0;
 	height:36px;
 	width:70px;
 	border-radius:0;
-	padding:0 8px;
+	padding:0;
 	text-align:center;
 	line-height:36px;
 	border:none;
 	background:#c01;
 	color:white;
 	position:relative;
+	background-color: rgb(70,70,70);
 }
+#comment-controls .button#send-comment
+{
+	height:75px; line-height:75px;
+	width:75px;
+	font-size: 18px;
+	position:relative;
+	border-radius: 50%;
+	margin: 0 10px 0 0;
+	transform: translateY(-25%);
+	-moz-transform: translateY(-25%);
+	-webkit-transform: translateY(-25%);
+}
+#comment-controls .button#comment-option-btn
+{
+	height:40px; line-height:40px;
+	width:70px;
+	font-size: 14px;
+	position:relative;
+	right: 0px;
+	
+	/*border-radius: 50%;*/
+
+}
+
 
 #comment-controls .button:hover
 {
-	background:#dd0017;
+	background:rgb(204,0,17);
 }
 
 #comment-controls .button:active
@@ -172,12 +206,14 @@
 #comment-options
 {
   position: absolute;
-  background: white;
-  border: 1px solid #666;
+  background: rgb(204,0,17);
+  /*border: 1px solid ;*/
   bottom: 36px;
   right:0;
   display:none;
-  color:#333;
+  color:#fff;
+  z-index: 2;
+
 }
 
 #comment-option-btn.show #comment-options
@@ -192,11 +228,12 @@
 	text-align:left;
 	line-height:2em;
 	cursor:pointer;
+	padding: 0 5px 0;
 }
 
 #comment-options label:hover
 {
-	background:#555;
+	background:rgb(50,50,50);
 	color:white;
 }
 
@@ -221,3 +258,6 @@
 	font-size:1em;
 	width:80%;
 }
+
+
+
