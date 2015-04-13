@@ -227,6 +227,20 @@
 	color:#333;
 	display:none;
 	margin-left:5px;
+	border-radius: 2px;
+	border: 2px solid rgb(200,200,200);
+	transition: color .3s ease 0s,  background .3s ease 0s;
+}
+.comment .button:hover
+{
+	float:right;
+	min-width:10px;
+	color:rgb(255,255,255);
+	display:none;
+	margin-left:5px;
+	border-radius: 2px;
+	border: 2px solid rgb(200,200,200);
+	background: rgb(70,70,70);
 }
 
 .comment:hover .button
