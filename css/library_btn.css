@@ -3,17 +3,36 @@
 	position:fixed;
 	top:55px;
 	left:15px;
-	background: #404040;
+	/*background: #404040;*/
 	min-width:0;
 	width:80px;
 	height:80px;
-	border-radius:40px;
-	border:none;
-	padding:4px 0;
+	line-height: 20px;
+	border-radius:50%;
+	font-size:14pt;
+	color:white;
+	transition:transform 0.6s, opacity 0.6s, border .35s ease 0s, background .35s ease 0s;
+	z-index: 100;
+	border: 3px solid rgba(70,70,70,0);
+	box-shadow: 0 1px 8px rgba(0,0,0,.15);
+}
+#search_notification_sect .button.library-button:hover
+{
+	position:fixed;
+	top:55px;
+	left:15px;
+	background: rgba(255,255,255,1);
+	min-width:0;
+	width:80px;
+	height:80px;
+	line-height: 20px;
+	border-radius:50%;
 	font-size:14pt;
 	color:white;
 	transition:transform 0.6s, opacity 0.6s;
 	z-index: 100;
+	border: 3px solid rgba(70,70,70,1);
+	box-shadow: 0 1px 8px rgba(0,0,0,.15);
 }
 
 #search_notification_sect .library-button .text
@@ -27,14 +46,14 @@
 	left:9px;
 	text-align:center;
 	opacity:0;
-	background:#c01;
+	/*background:#c01;*/
 	transform:rotate(180deg);
 }
 
 #search-div .button.library-button:hover,
 #search-div .button.library-button:hover *
 {
-	background:#595959;
+	/*background:#595959;*/
 }
 
 #search-div .button.chat-button:active,

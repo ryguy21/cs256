@@ -116,11 +116,22 @@ input:focus
 {
 	float:right;
 	margin:5px 8px;
+	height: 100%;
+	display: block;
+	float: right;
+	height: 20px;
 }
 
 .dropdown.open .dropdown-arrow
 {
 	display:none;
+}
+
+.dropdown .dropdown-arrow img
+{
+	height: 100%;
+	transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
 }
 
 .dropdown .dropdown-item

@@ -84,8 +84,13 @@ div#chatroom
 	font-size:11pt;
 	padding:4px 8px;
 	border-radius:4px;
-	border:1px solid #555;
+	border:1px solid rgb(200,200,200);
 	width:200px;
+}
+#create-room{
+	border: 1px solid rgb(200,200,200);
+	background-color: rgb(70,70,70);
+	color: white;
 }
 
 #chat-text-input
