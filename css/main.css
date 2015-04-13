@@ -54,7 +54,7 @@ html, body {
 	padding:4px 10px;
 	min-width:100px;
 	text-align:center;
-	border:1px solid #555;
+	border:1px solid rgb(70,70,70);
 	border-radius:4px;
 	font-size:11pt;
 	cursor:pointer;
@@ -157,8 +157,9 @@ input:focus
 	right:0;
 	height:50px;
 	border-bottom:1px solid #555;
-	background:#666;
+	background:rgb(70,70,70);
 	z-index:100;
+	box-shadow: 0 2px 8px rgba(0,0,0,.2);
 }
 
 .header-item
@@ -173,7 +174,7 @@ input:focus
 	text-decoration:none;
 	color:white;
 	font-size:15pt;
-	background:#666;
+	background:rgb(70,70,70);
 }
 
 .header-item > *
@@ -190,6 +191,7 @@ input:focus
 .header-item-right
 {
 	float:right;
+	margin: 0 3% 0 0;
 }
 
 .header-item.button
@@ -197,12 +199,28 @@ input:focus
 	background:none !important;
 	color:white !important;
 	box-shadow:none !important;
-	border:1px solid #666;
+	/*border:1px solid rgb(70,70,70);*/
+	letter-spacing: 0;
+	position: relative;
+	text-align: center;
 }
-
 .header-item.button:hover
 {
-	border:1px solid white;
+	/*letter-spacing: 1.5px;*/
+}
+.header-item.button:after {
+	content: "";
+	display: block;
+	position: absolute;
+	bottom: 10px;
+	width: 72%;
+	height: 1px;
+	left: 14%;
+	background-color: none;
+	transition: background-color .15s ease 0s;
+}
+.header-item.button:hover:after {
+	background-color: white;
 }
 
 .header-item.button:active

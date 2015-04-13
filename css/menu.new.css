@@ -4,6 +4,7 @@ html, body {
 	font-family: "Geomanist";
 	font-size: 100%;
 	line-height: 1;
+	min-width:1000px;
 }
 
 @font-face {
@@ -261,17 +262,25 @@ header {
 }
 .video {
 	height: 160px;
-	width: 47.5%;
-	margin: 0 0 30px;
+	width: 425px;
+	margin: 0 0 40px;
 	cursor: pointer;
+	position: relative;
+	box-shadow: 0 3px 10px rgba(0,0,0,.1);
+	transition: box-shadow .2s ease 0s, left .2s ease 0s, right .2s ease 0s, width .15s ease 0s;
+}
+.video:hover {
+	box-shadow: 0 5px 15px rgba(0,0,0,.2);
 }
 .video:nth-child(2n+1) {
 	float: left;
+	left: 0;
 }
 .video:nth-child(2n) {
 	float: right;
 }
-.video_screen{
+
+.video .video_screen{
 	width: 55%;
 	height: 100%;
 	float: left;
@@ -280,12 +289,21 @@ header {
 	background-size: cover;
 	position:relative;
 	cursor: pointer;
+	opacity: .95;
+	transition: opacity .25s ease 0s;
 }
-.video_screen:before{
+.video:hover .video_screen:hover {
+	opacity: 1;
+}
+.video .video_screen:before{
 	content: "";
 	width: 100%;
 	height: 100%;
 	position: absolute;
+	box-shadow: inset 0 0 20px 5px rgba(0,0,0,.25);
+	transition: box-shadow .25s ease 0s;
+}
+.video:hover .video_screen:before{
 	box-shadow: inset 0 0 35px 5px rgba(0,0,0,.4);
 }
 	#video1 {
@@ -310,7 +328,7 @@ header {
 		background-image: url(../img/gate.jpg);
 	}
 
-.video_stats{
+.video .video_stats{
 	width: 45%;
 	height: 115px;
 	max-height: 100%;
@@ -318,6 +336,11 @@ header {
 	float: right;
 	position: relative;
 	padding: 45px 0 0;
+	transition: background-color .3s ease 0s;
+}
+.video:hover .video_stats{
+	background-color: rgb(55,55,55);
+
 }
 .video .video_title {
 	position: absolute;
@@ -333,12 +356,13 @@ header {
 	text-align: center;
 	text-decoration: underline;
 	background-color: rgb(70,70,70);
-	transition: .2s ease 0s;
+	transition: top .2s ease 0s, border-radius .2s ease 0s, background-color .3s ease 0s;
 	cursor:pointer;
 }
 .video:hover .video_title {
 	top: -20px;
 	border-radius: 15px;
+	background-color: rgb(55,55,55);
 }
 
 .num_data {

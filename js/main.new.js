@@ -4,8 +4,7 @@ addLoadFunction(function()
 	function sortByChapter(){
 		var recent_act = document.getElementById("recent_act_btn");
 		var chapter = document.getElementById("chapter_btn");
-
-
+		
 	    var content = get('main-content')
 	    var headers = content.querySelectorAll('.chapter_header')
 	    var videos = content.querySelectorAll('.video')
