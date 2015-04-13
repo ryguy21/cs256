@@ -2,8 +2,14 @@
 #search_notification_sect .button.library-button
 {
 	top:10px !important;
-	background:#999 !important;
+	background:rgb(170,170,170) !important;
 	color:white !important;
+	transition: color .5s ease 0s, background .5s ease 0s;
+}
+#search_notification_sect .button.library-button:hover
+{
+	background:rgb(255,255,255) !important;
+	color:rgb(70,70,70) !important;
 }
 
 .search_notification_sect {
