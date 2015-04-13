@@ -1,32 +1,17 @@
 
-#content
-{
-	/*position:fixed;*/
-}
-
 #comment-feed-wrapper
 {
 	width: 100%;
 	position: relative;
-	/*background-color: lime;*/
 	padding: 0 0 50px;
-
-	/*bottom: 45px;*/
-	/*top: 590px;*/
 }
 
 #comment-feed-box
 {
-
 	margin:0 auto;
 	width:750px;
-	/*display:table;*/
 	background:none;
 }
-/*#comment-feed-box > *
-{
-	display:table-row;
-}*/
 #comment-feed {
 	max-height: 450px;
 	overflow-y: scroll;
@@ -37,10 +22,7 @@
 
 #comment-controls
 {
-	/*height:10px;*/
 	position: relative;
-	/*background-color: purple;*/
-	/*background:#666;*/
 }
 
 #comment-text
@@ -87,11 +69,7 @@
 	font-size: 14px;
 	position:relative;
 	right: 0px;
-	
-	/*border-radius: 50%;*/
-
 }
-
 
 #comment-controls .button:hover
 {
@@ -159,19 +137,24 @@
 
 .tag
 {
-	background:#666;
-	border-color:#666;
+	background:#444;
+	border-color:#444;
 	color:#aaa;
 }
 
 .tag:hover
 {
-	background:#777;
+	background:#555;
 }
 
 .tag:active
 {
-	background:#555;
+	background:#444;
+}
+
+#comment-feed-box .tag .username
+{
+	color:#eee;
 }
 
 .reply
