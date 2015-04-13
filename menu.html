@@ -103,30 +103,30 @@
 					<div id="video1" class="video_screen"></div>
 					<div class="video_stats">
 						<div class="video_title">City Life</div>
-						<div class="num_comments num_data">3 Comments</div>
+						<div class="num_comments num_data">2 Comments</div>
 						<div class="num_questions num_data">3 Questions</div>
-						<div class="num_answers num_data">3 Answers</div>
-						<div class="num_tags num_data">3 Tags</div>
+						<div class="num_answers num_data">3 Answers <img src="img/alert.png"></div>
+						<div class="num_tags num_data">2 Tags</div>
 					</div>
 				</div>
 				<div class="video" data-chapter='1.2' data-update='1.1'>
 					<div id="video2" class="video_screen"></div>
 					<div class="video_stats">
 						<div class="video_title">Cuisine</div>
-						<div class="num_comments num_data">3 Comments</div>
-						<div class="num_questions num_data">3 Questions</div>
-						<div class="num_answers num_data">3 Answers</div>
-						<div class="num_tags num_data">3 Tags</div>
+						<div class="num_comments num_data">5 Comments</div>
+						<div class="num_questions num_data">1 Questions</div>
+						<div class="num_answers num_data">0 Answers</div>
+						<div class="num_tags num_data">5 Tags</div>
 					</div>
 				</div>
 				<div class="video" data-chapter='1.3' data-update='2.1'>
 					<div id="video3" class="video_screen"></div>
 					<div class="video_stats">
 						<div class="video_title">Shinto</div>
-						<div class="num_comments num_data">3 Comments</div>
-						<div class="num_questions num_data">3 Questions</div>
-						<div class="num_answers num_data">3 Answers</div>
-						<div class="num_tags num_data">3 Tags</div>
+						<div class="num_comments num_data">2 Comments</div>
+						<div class="num_questions num_data">6 Questions</div>
+						<div class="num_answers num_data">4 Answers</div>
+						<div class="num_tags num_data">2 Tags</div>
 					</div>
 				</div>
 			</div>
@@ -138,20 +138,20 @@
 					<div id="video4" class="video_screen"></div>
 					<div class="video_stats">
 						<div class="video_title">Entertainment</div>
-						<div class="num_comments num_data">3 Comments</div>
-						<div class="num_questions num_data">3 Questions</div>
-						<div class="num_answers num_data">3 Answers</div>
-						<div class="num_tags num_data">3 Tags</div>
+						<div class="num_comments num_data">5 Comments <img src="img/alert.png"></div>
+						<div class="num_questions num_data">4 Questions</div>
+						<div class="num_answers num_data">4 Answers<img src="img/alert.png"></div>
+						<div class="num_tags num_data">7 Tags</div>
 					</div>
 				</div>
 				<div class="video" data-chapter='2.2' data-update='3.1'>
 					<div id="video5" class="video_screen"></div>
 					<div class="video_stats">
 						<div class="video_title">Anime</div>
-						<div class="num_comments num_data">3 Comments</div>
-						<div class="num_questions num_data">3 Questions</div>
-						<div class="num_answers num_data">3 Answers</div>
-						<div class="num_tags num_data">3 Tags</div>
+						<div class="num_comments num_data">1 Comments</div>
+						<div class="num_questions num_data">8 Questions</div>
+						<div class="num_answers num_data">1 Answers</div>
+						<div class="num_tags num_data">3 Tags <img src="img/alert.png"></div>
 					</div>
 				</div>
 			</div>
@@ -163,20 +163,20 @@
 					<div id="video6" class="video_screen"></div>
 					<div class="video_stats">
 						<div class="video_title">Japanese Religion</div>
-						<div class="num_comments num_data">3 Comments</div>
-						<div class="num_questions num_data">3 Questions</div>
-						<div class="num_answers num_data">3 Answers</div>
-						<div class="num_tags num_data">3 Tags</div>
+						<div class="num_comments num_data">1 Comments</div>
+						<div class="num_questions num_data">5 Questions</div>
+						<div class="num_answers num_data">4 Answers</div>
+						<div class="num_tags num_data">7 Tags</div>
 					</div>
 				</div>
 				<div class="video" data-chapter='3.2' data-update='2.3'>
 					<div id="video7" class="video_screen"></div>
 					<div class="video_stats">
 						<div class="video_title">Japanese Religion</div>
-						<div class="num_comments num_data">3 Comments</div>
+						<div class="num_comments num_data">8 Comments</div>
 						<div class="num_questions num_data">3 Questions</div>
-						<div class="num_answers num_data">3 Answers</div>
-						<div class="num_tags num_data">3 Tags</div>
+						<div class="num_answers num_data">2 Answers</div>
+						<div class="num_tags num_data">6 Tags</div>
 					</div>
 				</div>
 			</div>
@@ -212,16 +212,16 @@
 
 	<script type="text/javascript">
 	    var numbers = document.getElementById('content').querySelectorAll('.num_data')
-	    for (var n = 0; n < numbers.length; n++)
-	    {
-	    	var num = numbers[n],
-	    		randNumMin = 1,
-				randNumMax = 10,
-				rand = Math.random(),
-				randInt = (Math.floor(rand * rand * (randNumMax - randNumMin + 1)) + randNumMin)
+	   //  for (var n = 0; n < numbers.length; n++)
+	   //  {
+	   //  	var num = numbers[n],
+	   //  		randNumMin = 1,
+				// randNumMax = 10,
+				// rand = Math.random(),
+				// randInt = (Math.floor(rand * rand * (randNumMax - randNumMin + 1)) + randNumMin)
 
-	    	num.textContent = randInt + num.textContent.substr(1)
-	    }
+	   //  	num.textContent = randInt + num.textContent.substr(1)
+	   //  }
 
 		window.addEventListener("load", function(){
 			var videoScreens = document.querySelectorAll(".video");
