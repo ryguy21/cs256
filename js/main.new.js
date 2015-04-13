@@ -46,8 +46,11 @@ addLoadFunction(function()
 	}
 
 	function sortByActivity(){
+
 		var recent_act = document.getElementById("recent_act_btn");
 		var chapter = document.getElementById("chapter_btn");
+
+
 
 	    recent_act.className += " selected";
 	    chapter.removeAttribute("selected");
@@ -100,10 +103,50 @@ addLoadFunction(function()
 	    }
 	}
 
+	function fadeOutVideos() {
+		var videosCont = document.getElementsByClassName("videos_cont");
+		
+		for(var i = 0, ii = videosCont.length; i < ii ; i++ )
+			videosCont[i].classList.add("fadeVideos");
+
+		var chapterHeaders = document.getElementsByClassName("chapter_header");
+		for(var i = 0, ii = chapterHeaders.length; i < ii ; i++ )
+			chapterHeaders[i].classList.add("fadeVideos");
+	}
+	function fadeInVideos() {
+		var videosCont = document.getElementsByClassName("videos_cont");
+		
+		for(var i = 0, ii = videosCont.length; i < ii ; i++ )
+			videosCont[i].classList.remove("fadeVideos");
+
+		var chapterHeaders = document.getElementsByClassName("chapter_header");
+		for(var i = 0, ii = chapterHeaders.length; i < ii ; i++ )
+			chapterHeaders[i].classList.remove("fadeVideos");
+
+	}
+
+
 
 	var el = document.getElementById("recent_act_btn");
-	el.addEventListener("click", sortByActivity, false);
+	el.addEventListener("click", function(){
+
+		fadeOutVideos();
+		setTimeout(function(){
+			sortByActivity();
+			fadeInVideos();
+		}, 250);
+			
+	});
+
 
 	var el = document.getElementById("chapter_btn");
-	el.addEventListener("click", sortByChapter, false);
+	el.addEventListener("click", function(){
+
+		fadeOutVideos();
+		setTimeout(function(){
+			sortByChapter();
+			fadeInVideos();
+		}, 250);
+			
+	});
 })
